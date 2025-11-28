@@ -1,5 +1,6 @@
 <script>
   import { onMount, onDestroy } from 'svelte';
+  import { base } from '$app/paths'; // <--- 新增这一行
 
   // --- 1. 内置数据 (保持不变) ---
   const complianceData = [
@@ -27,12 +28,12 @@
     { rank: 22, lat: 40.03158, lng: -75.02231, id: "110000767137", score: 0.53 },
     { rank: 23, lat: 40.02107, lng: -75.06822, id: "110000337038", score: 0.51 },
     { rank: 24, lat: 39.943069, lng: -75.190723, id: "110000337029", score: 0.48 },
-    { rank: 25, lat: 40.031275, lng: -75.021765, id: "110041235865", score: 0.47 },
-    { rank: 26, lat: 39.95276, lng: -75.14993, id: "110023737134", score: 0.45 },
-    { rank: 27, lat: 39.9671, lng: -75.1269, id: "110000336716", score: 0.44 },
-    { rank: 28, lat: 40.03795, lng: -75.1119, id: "110000336636", score: 0.43 },
-    { rank: 29, lat: 39.98361, lng: -75.088364, id: "110000878756", score: 0.42 },
-    { rank: 30, lat: 39.95246, lng: -75.20984, id: "110001214347", score: 0.41 }
+    { rank: 25, lat: 40.031275, lng: -75.021765, id: "110041235865", score: 0.469 },
+    { rank: 26, lat: 39.95276, lng: -75.14993, id: "110023737134", score: 0.455 },
+    { rank: 27, lat: 39.9671, lng: -75.1269, id: "110000336716", score: 0.448 },
+    { rank: 28, lat: 40.03795, lng: -75.1119, id: "110000336636", score: 0.435 },
+    { rank: 29, lat: 39.98361, lng: -75.088364, id: "110000878756", score: 0.420 },
+    { rank: 30, lat: 39.95246, lng: -75.20984, id: "110001214347", score: 0.418 }
   ];
 
   const harmData = [
@@ -77,7 +78,12 @@
   ];
 
   let selectedMetric = 'percent_black_nh';
-  let activeModel = null; 
+  
+  // --- 控制状态 ---
+  let showModelA = false;
+  let showModelB = false;
+  let rankFilterA = 'all'; // 'all', '1-10', '11-20', '21-30'
+  let rankFilterB = 'all'; 
 
   let map;
   let L;
@@ -85,10 +91,16 @@
   let facilityLayerGroup;
   let mapContainer;
 
+  // --- 2. 颜色逻辑 ---
   function getColor(d) {
-    return d > 80 ? '#08306b' : d > 60 ? '#08519c' : d > 40 ? '#2171b5' : 
-           d > 20 ? '#4292c6' : d > 10 ? '#6baed6' : d > 5  ? '#9ecae1' : 
-           d > 0  ? '#c6dbef' : '#f7fbff';
+    return d > 80 ? '#4a1486' : // Deep Purple
+           d > 60 ? '#6a51a3' :
+           d > 40 ? '#807dba' :
+           d > 20 ? '#9e9ac8' :
+           d > 10 ? '#bcbddc' :
+           d > 5  ? '#dadaeb' :
+           d > 0  ? '#f2f0f7' : 
+                    '#ffffff';
   }
 
   function style(feature) {
@@ -100,69 +112,79 @@
     };
   }
 
-  // --- 关键改进：根据排名生成渐变色 ---
   function getRankColor(rank, type) {
-      // 颜色越深，排名越靠前 (Rank 1 = Darkest)
-      // 计算亮度 (Lightness): Rank 1 -> 35%, Rank 30 -> 85%
-      const lightness = 35 + ((rank - 1) / 30) * 50; 
-      
-      if (type === 'compliance') {
-          // 蓝色系 (Hue 220)
-          return `hsl(220, 90%, ${lightness}%)`;
-      } else {
-          // 红色系 (Hue 0)
-          return `hsl(0, 85%, ${lightness}%)`;
+      const lightness = 40 + ((rank - 1) / 30) * 45; 
+      if (type === 'compliance') return `hsl(210, 90%, ${lightness}%)`;
+      else return `hsl(0, 85%, ${lightness}%)`;
+  }
+
+  // --- 3. 新增：重置视角函数 ---
+  function resetView() {
+      if (map) {
+          map.setView([40.0, -75.1652], 11);
       }
   }
 
+  // --- 4. 更新工厂点位 ---
   function updateFacilities() {
     if (!map || !L || !facilityLayerGroup) return;
+    
     facilityLayerGroup.clearLayers();
-    if (!activeModel) return;
 
-    const data = activeModel === 'compliance' ? complianceData : harmData;
-    const modelType = activeModel; // 'compliance' or 'harm'
+    const addPoints = (data, type, rankFilter) => {
+        let filteredData = data;
+        
+        if (rankFilter === '1-10') filteredData = data.filter(d => d.rank <= 10);
+        else if (rankFilter === '11-20') filteredData = data.filter(d => d.rank >= 11 && d.rank <= 20);
+        else if (rankFilter === '21-30') filteredData = data.filter(d => d.rank >= 21 && d.rank <= 30);
 
-    data.forEach(d => {
-      const pointColor = getRankColor(d.rank, modelType);
-      
-      // --- 关键改进：Icon 样式 ---
-      // 1. 小圆点 (dot)
-      // 2. 旁注数字 (label) 绝对定位在圆点右上方
-      const iconHtml = `
-        <div class="facility-marker-container">
-            <div class="dot" style="background-color: ${pointColor};"></div>
-            <div class="label" style="color: ${pointColor};">${d.rank}</div>
-        </div>
-      `;
+        filteredData.forEach(d => {
+            const pointColor = getRankColor(d.rank, type);
+            const iconHtml = `
+              <div class="facility-marker-container">
+                  <div class="dot" style="background-color: ${pointColor};"></div>
+                  <div class="label" style="color: ${pointColor};">${d.rank}</div>
+              </div>
+            `;
 
-      const icon = L.divIcon({
-        className: 'custom-div-icon', // 基础清除样式
-        html: iconHtml,
-        iconSize: [20, 20],   // 容器大小
-        iconAnchor: [6, 6]    // 锚点在圆点中心 (圆点设为12px，所以大概是6)
-      });
+            const icon = L.divIcon({
+              className: 'custom-div-icon',
+              html: iconHtml,
+              iconSize: [20, 20],
+              iconAnchor: [6, 6] 
+            });
 
-      const marker = L.marker([d.lat, d.lng], { 
-          icon: icon, 
-          // Rank 1 (Score高) 的 zIndex 最高，保证覆盖在其他点上面
-          zIndexOffset: 10000 - d.rank 
-      });
+            const marker = L.marker([d.lat, d.lng], { 
+                icon: icon, 
+                zIndexOffset: (10000 - d.rank) + (type === 'harm' ? 50 : 0)
+            });
 
-      const scoreDisplay = Math.round(d.score).toLocaleString();
-      marker.bindPopup(`
-        <div class="popup-content">
-            <div class="popup-header" style="color:${pointColor}">Rank #${d.rank}</div>
-            <div><strong>ID:</strong> ${d.id}</div>
-            <div><strong>Score:</strong> ${scoreDisplay}</div>
-        </div>
-      `);
-      facilityLayerGroup.addLayer(marker);
-    });
+            const scoreDisplay = Math.round(d.score).toLocaleString();
+            const typeLabel = type === 'compliance' ? 'Compliance Model' : 'Harm Model';
+            
+            marker.bindPopup(`
+              <div class="popup-content">
+                  <div class="popup-header" style="color:${pointColor}">
+                    ${typeLabel} #${d.rank}
+                  </div>
+                  <div><strong>ID:</strong> ${d.id}</div>
+                  <div><strong>Score:</strong> ${scoreDisplay}</div>
+              </div>
+            `);
+            facilityLayerGroup.addLayer(marker);
+        });
+    };
+
+    if (showModelA) addPoints(complianceData, 'compliance', rankFilterA);
+    if (showModelB) addPoints(harmData, 'harm', rankFilterB);
   }
 
+  // --- 5. 响应式监听 ---
   $: if (geoJsonLayer && selectedMetric) geoJsonLayer.setStyle(style);
-  $: if (map && facilityLayerGroup && (activeModel || activeModel === null)) updateFacilities();
+  
+  $: if (map && facilityLayerGroup && (showModelA || !showModelA || showModelB || !showModelB || rankFilterA || rankFilterB)) {
+      updateFacilities();
+  }
 
   onMount(async () => {
     if (typeof window !== 'undefined') {
@@ -179,7 +201,7 @@
 
         facilityLayerGroup = L.layerGroup().addTo(map);
 
-        const res = await fetch('/Vital_Population_CT.geojson');
+        const res = await fetch(`${base}/Vital_Population_CT.geojson`);
         if (res.ok) {
             const data = await res.json();
             geoJsonLayer = L.geoJson(data, { 
@@ -190,7 +212,7 @@
                     layer.on('mouseover', e => { 
                         e.target.setStyle({ weight: 2, color: '#333' }); 
                         e.target.bringToFront(); 
-                        if(facilityLayerGroup) facilityLayerGroup.bringToFront(); // 保持点在最上
+                        if(facilityLayerGroup) facilityLayerGroup.bringToFront(); 
                     });
                     layer.on('mouseout', e => geoJsonLayer.resetStyle(e.target));
                 }
@@ -226,15 +248,31 @@
 </svelte:head>
 
 <div class="dashboard">
-    <div class="map-panel" bind:this={mapContainer}></div>
+    <!-- 左侧地图：改为 wrapper 结构以容纳 Reset 按钮 -->
+    <div class="map-panel">
+        <div class="leaflet-map" bind:this={mapContainer}></div>
+        
+        <!-- Reset 按钮：绝对定位在左上角 (Zoom 控件下方) -->
+        <button class="reset-btn" on:click={resetView} title="Reset View">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <circle cx="12" cy="12" r="10"></circle>
+                <circle cx="12" cy="12" r="3"></circle>
+                <line x1="12" y1="2" x2="12" y2="22"></line>
+                <line x1="2" y1="12" x2="22" y2="12"></line>
+            </svg>
+        </button>
+    </div>
+
+    <!-- 右侧控制栏 -->
     <div class="sidebar">
         <div class="sidebar-header">
             <h3>Philly EJ Dashboard</h3>
             <p>Compare algorithmic enforcement strategies.</p>
         </div>
 
+        <!-- 1. 人口 (背景) -->
         <div class="control-group">
-            <div class="group-label">1. Demographic Layer</div>
+            <div class="group-label">1. Demographic Layer (Purple)</div>
             <div class="radio-list">
                 {#each metrics as metric}
                     <label class="radio-item" class:selected={selectedMetric === metric.value}>
@@ -248,32 +286,76 @@
             </div>
         </div>
 
+        <!-- 2. 模型与过滤 (点位) -->
         <div class="control-group">
-            <div class="group-label">2. Inspection Models</div>
+            <div class="group-label">2. Inspection Models & Rank</div>
             
-            <button class="model-btn compliance" class:active={activeModel === 'compliance'} on:click={() => activeModel = activeModel === 'compliance' ? null : 'compliance'}>
-                <div class="btn-icon blue">A</div>
-                <div class="btn-text">
-                    <span class="btn-title">Model A: Compliance</span>
-                    <span class="btn-desc">Targets frequent violators (Blue)</span>
+            <!-- Model A Card -->
+            <div class="model-card-container">
+                <button class="model-btn compliance" class:active={showModelA} on:click={() => showModelA = !showModelA}>
+                    <div class="btn-icon blue">A</div>
+                    <div class="btn-text">
+                        <span class="btn-title">Model A: Compliance</span>
+                        <span class="btn-desc">Targets frequent violators (Blue)</span>
+                    </div>
+                    <div class="checkbox-indicator">{showModelA ? 'ON' : 'OFF'}</div>
+                </button>
+                <div class="rank-row" class:disabled={!showModelA}>
+                    <button class="rank-chip" class:active={rankFilterA === 'all'} on:click={() => rankFilterA = 'all'}>All</button>
+                    <button class="rank-chip" class:active={rankFilterA === '1-10'} on:click={() => rankFilterA = '1-10'}>1-10</button>
+                    <button class="rank-chip" class:active={rankFilterA === '11-20'} on:click={() => rankFilterA = '11-20'}>11-20</button>
+                    <button class="rank-chip" class:active={rankFilterA === '21-30'} on:click={() => rankFilterA = '21-30'}>21-30</button>
                 </div>
-            </button>
+            </div>
 
-            <button class="model-btn harm" class:active={activeModel === 'harm'} on:click={() => activeModel = activeModel === 'harm' ? null : 'harm'}>
-                <div class="btn-icon red">B</div>
-                <div class="btn-text">
-                    <span class="btn-title">Model B: Harm Reduction</span>
-                    <span class="btn-desc">Targets major polluters (Red)</span>
+            <!-- Model B Card -->
+            <div class="model-card-container">
+                <button class="model-btn harm" class:active={showModelB} on:click={() => showModelB = !showModelB}>
+                    <div class="btn-icon red">B</div>
+                    <div class="btn-text">
+                        <span class="btn-title">Model B: Harm Reduction</span>
+                        <span class="btn-desc">Targets major polluters (Red)</span>
+                    </div>
+                    <div class="checkbox-indicator">{showModelB ? 'ON' : 'OFF'}</div>
+                </button>
+                <div class="rank-row" class:disabled={!showModelB}>
+                    <button class="rank-chip" class:active={rankFilterB === 'all'} on:click={() => rankFilterB = 'all'}>All</button>
+                    <button class="rank-chip" class:active={rankFilterB === '1-10'} on:click={() => rankFilterB = '1-10'}>1-10</button>
+                    <button class="rank-chip" class:active={rankFilterB === '11-20'} on:click={() => rankFilterB = '11-20'}>11-20</button>
+                    <button class="rank-chip" class:active={rankFilterB === '21-30'} on:click={() => rankFilterB = '21-30'}>21-30</button>
                 </div>
-            </button>
+            </div>
+
         </div>
     </div>
 </div>
 
 <style>
-    /* CSS 美化 */
     .dashboard { display: flex; width: 100%; height: 750px; background: white; border-radius: 12px; overflow: hidden; box-shadow: 0 4px 20px rgba(0,0,0,0.08); border: 1px solid #e5e7eb; }
-    .map-panel { flex: 1; height: 100%; z-index: 1; background: #f3f4f6; }
+    
+    /* 左侧地图容器，设为相对定位 */
+    .map-panel { flex: 1; height: 100%; position: relative; background: #f3f4f6; }
+    .leaflet-map { width: 100%; height: 100%; z-index: 1; }
+
+    /* Reset 按钮样式 - 仿 Leaflet 原生风格 */
+    .reset-btn {
+        position: absolute;
+        top: 80px; /* 位于缩放控件下方 */
+        left: 10px;
+        z-index: 1000;
+        background: white;
+        border: 2px solid rgba(0,0,0,0.2);
+        border-radius: 4px;
+        width: 30px; height: 30px;
+        padding: 5px;
+        cursor: pointer;
+        display: flex; align-items: center; justify-content: center;
+        background-clip: padding-box;
+    }
+    .reset-btn:hover { background: #f4f4f4; }
+    .reset-btn svg { width: 18px; height: 18px; stroke: #444; }
+
+    /* Sidebar Styles */
     .sidebar { width: 340px; background: #fff; border-left: 1px solid #e5e7eb; display: flex; flex-direction: column; overflow-y: auto; }
     .sidebar-header { padding: 20px; background: #f9fafb; border-bottom: 1px solid #eee; }
     .sidebar-header h3 { margin: 0; font-size: 1.25rem; color: #111; }
@@ -284,50 +366,36 @@
     .radio-list { display: flex; flex-direction: column; gap: 8px; }
     .radio-item { display: flex; align-items: flex-start; gap: 10px; padding: 10px; border-radius: 8px; border: 1px solid #e5e7eb; cursor: pointer; transition: all 0.2s; }
     .radio-item:hover { background: #f9fafb; }
-    .radio-item.selected { background: #eff6ff; border-color: #3b82f6; box-shadow: 0 0 0 1px #3b82f6; }
-    .radio-item input { margin-top: 4px; }
+    .radio-item.selected { background: #f3e8ff; border-color: #7e22ce; box-shadow: 0 0 0 1px #7e22ce; }
+    .radio-item input { margin-top: 4px; accent-color: #7e22ce; }
     .radio-text { display: flex; flex-direction: column; }
     .label { font-weight: 600; font-size: 0.9rem; color: #374151; }
     .desc { font-size: 0.75rem; color: #6b7280; }
 
-    .model-btn { display: flex; align-items: center; gap: 12px; width: 100%; text-align: left; padding: 12px; margin-bottom: 10px; background: white; border: 1px solid #e5e7eb; border-radius: 8px; cursor: pointer; transition: all 0.2s; }
-    .model-btn:hover { background: #f9fafb; transform: translateY(-1px); }
-    .btn-icon { width: 32px; height: 32px; border-radius: 6px; display: flex; align-items: center; justify-content: center; font-weight: bold; color: white; flex-shrink: 0; }
+    .model-card-container { margin-bottom: 15px; border: 1px solid #e5e7eb; border-radius: 8px; padding: 8px; background: #fafafa; }
+    .model-btn { display: flex; align-items: center; gap: 10px; width: 100%; text-align: left; padding: 8px; background: white; border: 1px solid #e5e7eb; border-radius: 6px; cursor: pointer; transition: all 0.2s; margin-bottom: 8px; }
+    .model-btn:hover { background: #f9fafb; }
+    .btn-icon { width: 28px; height: 28px; border-radius: 5px; display: flex; align-items: center; justify-content: center; font-weight: bold; color: white; font-size: 0.9rem; flex-shrink: 0; }
     .btn-icon.blue { background: #3b82f6; }
     .btn-icon.red { background: #ef4444; }
-    .btn-text { display: flex; flex-direction: column; }
-    .btn-title { font-weight: 700; font-size: 0.95rem; color: #111; }
-    .btn-desc { font-size: 0.8rem; color: #666; }
-    .model-btn.compliance.active { background: #eff6ff; border-color: #3b82f6; box-shadow: inset 0 0 0 1px #3b82f6; }
-    .model-btn.harm.active { background: #fef2f2; border-color: #ef4444; box-shadow: inset 0 0 0 1px #ef4444; }
+    .btn-text { flex: 1; display: flex; flex-direction: column; }
+    .btn-title { font-weight: 700; font-size: 0.85rem; color: #111; }
+    .btn-desc { font-size: 0.7rem; color: #666; }
+    .checkbox-indicator { font-size: 0.7rem; font-weight: 700; color: #ccc; }
 
-    /* --- 新的 Marker 样式 --- */
-    :global(.custom-div-icon) { background: transparent; border: none; overflow: visible; }
-    
-    /* 圆点 */
-    :global(.dot) {
-        width: 12px; height: 12px; border-radius: 50%;
-        border: 2px solid white; 
-        box-shadow: 0 2px 4px rgba(0,0,0,0.3);
-        /* 确保点本身不偏移 */
-        position: absolute; top: 0; left: 0;
-    }
+    .model-btn.compliance.active { background: #eff6ff; border-color: #3b82f6; }
+    .model-btn.compliance.active .checkbox-indicator { color: #3b82f6; }
+    .model-btn.harm.active { background: #fef2f2; border-color: #ef4444; }
+    .model-btn.harm.active .checkbox-indicator { color: #ef4444; }
 
-    /* 旁注数字 */
-    :global(.facility-marker-container .label) {
-        position: absolute;
-        left: 12px; /* 移到点右侧 */
-        top: -6px;  /* 稍微上移 */
-        font-size: 11px;
-        font-weight: 900;
-        text-shadow: 
-            -1px -1px 0 #fff,  
-             1px -1px 0 #fff,
-            -1px  1px 0 #fff,
-             1px  1px 0 #fff; /* 白色描边增加可读性 */
-        pointer-events: none; /* 让鼠标事件穿透数字直接点到圆点 */
-    }
+    .rank-row { display: flex; gap: 6px; }
+    .rank-row.disabled { opacity: 0.4; pointer-events: none; }
+    .rank-chip { flex: 1; padding: 4px 0; font-size: 0.75rem; text-align: center; border: 1px solid #e5e7eb; background: white; border-radius: 4px; cursor: pointer; color: #666; transition: all 0.1s; }
+    .rank-chip:hover { background: #f3f4f6; }
+    .rank-chip.active { background: #374151; color: white; border-color: #374151; font-weight: 600; }
 
+    :global(.dot) { width: 12px; height: 12px; border-radius: 50%; border: 2px solid white; box-shadow: 0 2px 4px rgba(0,0,0,0.3); position: absolute; top: 0; left: 0; }
+    :global(.facility-marker-container .label) { position: absolute; left: 12px; top: -6px; font-size: 11px; font-weight: 900; text-shadow: -1px -1px 0 #fff, 1px -1px 0 #fff, -1px 1px 0 #fff, 1px 1px 0 #fff; pointer-events: none; }
     :global(.popup-header) { font-weight: bold; padding-bottom: 4px; margin-bottom: 4px; border-bottom: 1px solid #eee; }
     :global(.info.legend) { background: white; padding: 8px; border-radius: 6px; box-shadow: 0 2px 10px rgba(0,0,0,0.1); font-size: 12px; }
     :global(.info.legend h6) { margin: 0 0 5px; color: #555; font-size: 11px; text-transform: uppercase; font-weight: bold; }
