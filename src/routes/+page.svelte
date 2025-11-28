@@ -1,5 +1,22 @@
 <script>
-	// 脚本区域
+    import { onMount } from 'svelte';
+    import { browser } from '$app/environment';
+
+    // 变量用于存储动态加载的组件
+    let MapComponent;
+
+    onMount(async () => {
+        if (browser) {
+            try {
+                // 动态导入：确保路径 '../components/InteractiveMap.svelte' 是正确的
+                const module = await import('../components/InteractiveMap.svelte');
+                MapComponent = module.default;
+                console.log("Map component loaded successfully");
+            } catch (error) {
+                console.error("Map loading failed:", error);
+            }
+        }
+    });
 </script>
 
 <svelte:head>
@@ -114,21 +131,25 @@
 
 	<!-- ================= 4. Map: 互动地图 ================= -->
 	<section id="map" class="map-section">
-		<div class="content-wrapper">
-			<h2 class="section-title">Visualizing the Shift</h2>
-			<p class="section-desc">
-				Comparing the <strong>Status Quo (Compliance)</strong> against our proposed <strong>Harm-Reduction Model</strong>.
-			</p>
-			
-			<div class="map-placeholder">
-				<div class="loader">
-					<div class="bar"></div>
-					<div class="bar"></div>
-					<div class="bar"></div>
-				</div>
-				<p>Interactive Map Module Loading...</p>
-			</div>
-		</div>
+    <div class="content-wrapper">
+        <h2 class="section-title">Visualizing the Shift</h2>
+        <p class="section-desc">
+            Explore how different algorithmic objectives reshape inspection priorities.
+        </p>
+        
+        <div class="map-container-full">
+            {#if MapComponent}
+                <svelte:component this={MapComponent} />
+            {:else}
+                <!-- 如果一直在这一步，请检查 F12 控制台报错 -->
+                <div class="loading-placeholder">
+                    <div class="spinner"></div>
+                    <p>Loading Interactive Map...</p>
+                    <p style="font-size: 0.8rem; color: #999; margin-top: 10px;">(If stuck, check Console F12)</p>
+                </div>
+            {/if}
+        </div>
+    </div>
 	</section>
 
 	<!-- ================= 5. Methodology: 幕后思考 (新增) ================= -->
@@ -345,22 +366,23 @@
 	.divider { height: 4px; width: 30px; background: var(--accent); margin: 1rem 0; }
 
 	/* --- Map --- */
-	.map-placeholder {
-		width: 100%;
-		height: 500px;
-		background: #E0E4E6;
-		display: flex;
-		flex-direction: column;
-		justify-content: center;
-		align-items: center;
-		font-family: var(--font-head);
-		color: var(--text-light);
-	}
-	.loader { display: flex; gap: 5px; margin-bottom: 1rem; }
-	.bar { width: 10px; height: 30px; background: var(--primary); animation: stretch 1s infinite; }
-	.bar:nth-child(2) { animation-delay: 0.1s; }
-	.bar:nth-child(3) { animation-delay: 0.2s; }
-	@keyframes stretch { 0%, 100% { height: 30px; } 50% { height: 50px; } }
+    .map-section { padding: 4rem 2rem; background: #f8f9fa; }
+    .content-wrapper { max-width: 1400px; margin: 0 auto; text-align: center; }
+    .section-title { font-size: 2.5rem; margin-bottom: 1rem; color: #111; }
+    .section-desc { font-size: 1.2rem; color: #666; margin-bottom: 3rem; max-width: 800px; margin-left: auto; margin-right: auto; }
+    .map-container-full { width: 100%; min-height: 750px; }
+    
+    .loading-placeholder {
+        width: 100%; height: 750px; background: #e5e7eb;
+        border-radius: 12px; display: flex; flex-direction: column;
+        align-items: center; justify-content: center; color: #6b7280;
+    }
+    .spinner {
+        width: 40px; height: 40px; border: 4px solid #d1d5db;
+        border-top-color: #3b82f6; border-radius: 50%;
+        animation: spin 1s linear infinite; margin-bottom: 15px;
+    }
+    @keyframes spin { to { transform: rotate(360deg); } }
 
 	/* --- Methodology (新增) --- */
 	.method-section {

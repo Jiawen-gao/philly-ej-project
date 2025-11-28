@@ -14,5 +14,8 @@
 		"svelte": "^4.2.20",
 		"vite": "^4.3.0"
 	},
-	"type": "module"
+	"type": "module",
+	"dependencies": {
+		"leaflet": "^1.9.4"
+	}
 }
