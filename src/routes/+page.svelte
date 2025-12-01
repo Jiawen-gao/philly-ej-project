@@ -2,7 +2,14 @@
     import { onMount } from 'svelte';
     import { browser } from '$app/environment';
     import { base } from '$app/paths'; // 引入 base 路径
+    import { slide } from 'svelte/transition'; // 引入动画效果
 
+    // 新增：控制 Context 区域的折叠/展开
+    let isContextExpanded = false;
+    const toggleContext = () => {
+        isContextExpanded = !isContextExpanded;
+    };
+    
     // 动态加载地图组件
     let MapComponent;
 
@@ -42,9 +49,13 @@
 
 <main>
     <!-- ================= 1. Hero: 核心愿景 ================= -->
-    <section id="overview" class="hero-section">
+    <!-- 1. Hero: 沉浸式全屏背景 -->
+    <section id="overview" class="hero-section" style="background-image: url('{base}/GettyImages-1151290020.jpg');">
+        <!-- 黑色遮罩层，确保文字可读性 -->
+        <div class="hero-overlay"></div>
+        
         <div class="container hero-container">
-            <div class="hero-text">
+            <div class="hero-content">
                 <span class="pill">Civic Data Simulation</span>
                 <h1>Is an Algorithm Deciding Your Neighborhood's Air Quality?</h1>
                 <h2 class="sub-heading">Research Question: Can we re-engineer enforcement algorithms to prioritize public health over paperwork?</h2>
@@ -58,48 +69,106 @@
                     <a href="#concepts" class="btn-secondary">How It Works</a>
                 </div>
             </div>
-            <!-- 装饰性元素 -->
-            <div class="hero-graphic">
-                <div class="stat-card float-1">
-                    <span class="stat-num">30%</span>
-                    <span class="stat-label">Inspections Shifted</span>
-                </div>
-                <div class="stat-card float-2">
-                    <span class="stat-num">EJ</span>
-                    <span class="stat-label">Focus Areas</span>
-                </div>
-            </div>
+        </div>
+
+        <!-- 图片版权说明 -->
+        <div class="hero-caption">
+            A view of the Philadelphia Energy Solutions refinery after a massive fire triggered several large explosions at the complex in South Philadelphia on June 21, 2019. Credit: Eduardo Munoz Alvarez/Getty Images
         </div>
     </section>
 
-    <!-- ================= 2. Context: 为什么这很重要 ================= -->
+   <!-- ================= 2. Context: 垂直流式布局 ================= -->
     <section id="context" class="context-section">
         <div class="container">
             <div class="section-header-group">
                 <span class="section-tag">Context</span>
-                <h2 class="section-heading">Why This Matters</h2>
-                <p class="section-abstract">
-                    <strong>Abstract:</strong> Environmental justice isn't just about where factories are built—it's about where inspectors go. 
-                    This project investigates the intersection of algorithmic bias, historical redlining, and modern regulatory enforcement in Philadelphia.
-                </p>
+                <h2 class="section-heading">Environmental Justice & Governance Algorithm</h2>
             </div>
-            
-            <div class="grid-3">
-                <div class="feature-card">
-                    <div class="icon-box">🏭</div>
-                    <h3>Historic Burden</h3>
-                    <p>Maps of today's asthma rates look suspiciously like redlining maps from the 1930s. Pollution in Philly isn't random; it's structural.</p>
+
+            <div class="bento-grid">
+                
+                <!-- Definition 1 -->
+                <div class="bento-card justice-def">
+                    <div class="card-header">
+                        <span class="icon">⚖️</span>
+                        <h3>Distributive Justice</h3>
+                    </div>
+                    <p><strong>Who remains exposed?</strong> If a hit-rate goal steers attention to places where violations are easy to find, it might neglect neighborhoods with the highest burdens but complex enforcement.</p>
                 </div>
-                <div class="feature-card">
-                    <div class="icon-box">🤖</div>
-                    <h3>The New "Black Box"</h3>
-                    <p>Agencies are adopting AI to decide where to inspect. But who writes the rules? An algorithm optimized for "efficiency" might ignore "equity."</p>
+
+                <!-- Definition 2 -->
+                <div class="bento-card justice-def">
+                    <div class="card-header">
+                        <span class="icon">🗳️</span>
+                        <h3>Procedural Justice</h3>
+                    </div>
+                    <p><strong>Who decides the objective?</strong> Can the choice of algorithm be transparent, explainable, and open to challenge?</p>
                 </div>
-                <div class="feature-card">
-                    <div class="icon-box">⚖️</div>
-                    <h3>The Trade-off</h3>
-                    <p>We face a choice: Do we catch the <em>most</em> violators (even tiny ones), or do we stop the <em>biggest</em> polluters?</p>
+
+                <!-- 核心叙事: 垂直流布局 (无分栏) -->
+                <div class="bento-card narrative-flow">
+                    
+                    <!-- Part 1: The Trade-off -->
+                    <div class="narrative-block top-block">
+                        <h4>The Trade-off: Efficiency vs. Justice</h4>
+                        <p>
+                            In brief, environmental justice is about whether pollution exposure and environmental protection are distributed fairly across different communities. But in reality, governments often have to decide which cases to enforce first because of limited resources. This naturally creates a trade-off between efficiency and justice.
+                        </p>
+                        <p>
+                            From an <span class="highlight-pill blue">efficiency standpoint</span>, targeting factories with less severe pollution can help meet policy goals faster and at lower cost. 
+                            But from the perspective of <span class="highlight-pill red">environmental justice</span>, the government should instead focus on the most heavily polluted sites to ease the burden on the communities that suffer the most.
+                        </p>
+                    </div>
+
+                    <div class="narrative-divider"></div>
+
+                    <!-- Part 2: The Algorithmic Turn -->
+                    <div class="narrative-block bottom-block">
+                        <h4>The Algorithmic Turn</h4>
+                        <p>
+                            With the rise of big data, people have started asking: can we use algorithms to help make these decisions in environmental management? However, algorithms in this context are <span class="bold-text">far from neutral technical tools</span>. The data we collect and the goals we set for algorithms can lead to very different enforcement priorities.
+                        </p>
+                        
+                        <!-- 核心高亮句 (无斜体) -->
+                        <div class="highlight-quote">
+                            <p>
+                                “Not only can biased data produce misleading results, but governments may also use algorithms to justify decisions, 
+                                <span class="mark">quietly turning policy choices into technical ones and masking their ethical implications.</span>”
+                            </p>
+                        </div>
+                    </div>
                 </div>
+
+                <!-- Why Philly -->
+                <div class="bento-card info-box accent">
+                    <h4>📍 Philadelphia Case Study</h4>
+                    <p>
+                        Therefore, we focus on Philadelphia and look at data from industrial facilities regulated under the <strong>Clean Air Act (CAA)</strong>.
+                    </p>
+                    <p>
+                        We built two models to simulate government decision-making to critically examine whether algorithms will reflect and reinforce existing social inequalities. By focusing on this city, we aim to:
+                    </p>
+                    <ul class="goal-list">
+                        <li>Critically examine if algorithms reinforce social inequalities.</li>
+                        <li>Make invisible biases visible.</li>
+                        <li>Reframe a purely technical challenge as a <strong>fundamentally political issue</strong>.</li>
+                    </ul>
+                </div>
+
+                <!-- What is CAA -->
+                <div class="bento-card info-box dark">
+                    <h4>📜 What is the Clean Air Act?</h4>
+                    <p>
+                        The United States’ core federal law for controlling air pollution. It primarily regulates fixed pollution sources such as refineries and power plants.
+                    </p>
+                    <p class="small-note">
+                        Common violations include exceeding permitted emission limits, abnormal monitoring data, or unreported emission incidents. Once found in violation, a facility may face fines, mandatory corrective actions, or shutdown orders.
+                    </p>
+                    <p class="impact-note">
+                        How regulators prioritize inspections directly shapes the air pollution risks faced by surrounded communities.
+                    </p>
+                </div>
+
             </div>
         </div>
     </section>
@@ -142,6 +211,7 @@
     </section>
 
     <!-- ================= 4. Map: 核心交互 (改为浅色背景) ================= -->
+    <!-- 4. Map Section (已更新数据来源) -->
     <section id="map" class="map-section-light">
         <div class="container-fluid">
             <div class="map-header">
@@ -160,6 +230,21 @@
                     </div>
                 {/if}
             </div>
+
+            <!-- 新增：数据来源说明 -->
+            <div class="data-sources-box">
+                <span class="source-label">Data Sources:</span>
+                <div class="source-links">
+                    <a href="https://metadata.phila.gov/index.html#home/datasetdetails/61c23fb963d616001ef54695/representationdetails/61eb230b3675cd001e28a23c/" target="_blank" rel="noopener noreferrer">
+                        1. Census Tract Population Metrics (OpenDataPhilly)
+                    </a>
+                    <span class="divider">|</span>
+                    <a href="https://echo.epa.gov/facilities/facility-search" target="_blank" rel="noopener noreferrer">
+                        2. EPA ECHO Facility Search (CAA Media Program)
+                    </a>
+                </div>
+            </div>
+
         </div>
     </section>
 
@@ -255,7 +340,7 @@
             <div class="school-details">
                 <h4>University of Pennsylvania</h4>
                 <h5>School of Social Policy & Practice</h5>
-                <p>Master of Science in Social Policy (MSSP)</p>
+                <p>Master of Science in Social Policy & Data Analytics (MSSP+DA)</p>
             </div>
         </div>
 
@@ -273,10 +358,10 @@
             <div class="team-names">
                 <span>Bosi Ding</span>
                 <span>Tingyu Zhao</span>
-                <span>Minxing He</span>
-                <span>Yiping Miao</span>
                 <span>Jiawen Gao</span>
                 <span>Trapetas C. McGill</span>
+                <span>Minxing He</span>
+                <span>Yiping Miao</span>
             </div>
         </div>
 
@@ -350,62 +435,145 @@
     .nav-item:hover::after { width: 100%; }
 
     /* --- Hero Section (Light & Airy) --- */
-    .hero-section {
-        padding: 8rem 0 6rem 0;
-        /* 柔和的渐变背景 */
-        background: radial-gradient(circle at 10% 20%, #f0fdfa 0%, #ffffff 80%);
-        position: relative; overflow: hidden;
+    /* --- Hero Section (Immersive Style) --- */
+    .hero-section { 
+        position: relative; 
+        height: 90vh; /* 占据屏幕 90% 高度，更有冲击力 */
+        min-height: 600px;
+        display: flex; 
+        align-items: center; 
+        justify-content: center;
+        background-size: cover; 
+        background-position: center; 
+        background-repeat: no-repeat;
+        color: white; /* 全局白字 */
+        overflow: hidden;
     }
-    .hero-container { display: flex; align-items: center; justify-content: space-between; gap: 4rem; }
-    
-    .hero-text { max-width: 650px; z-index: 2; }
-    .pill { 
-        display: inline-block; background: var(--accent-light); color: var(--accent);
-        padding: 6px 14px; border-radius: 50px; font-size: 0.8rem; font-weight: 700; 
-        text-transform: uppercase; margin-bottom: 1.5rem; letter-spacing: 1px;
-    }
-    h1 {
-        font-family: var(--font-head); font-size: 3.8rem; line-height: 1.1;
-        margin: 0 0 1.5rem 0; color: var(--text-primary);
-        letter-spacing: -1px;
-    }
-    .sub-heading {
-        font-family: var(--font-body); font-size: 1.3rem; font-weight: 500;
-        color: var(--accent); margin-bottom: 1.5rem; line-height: 1.4;
-    }
-    .hero-desc { font-size: 1.1rem; color: var(--text-secondary); margin-bottom: 2.5rem; max-width: 90%; }
-    
-    .hero-actions { display: flex; gap: 1rem; }
-    .btn-primary {
-        background: var(--accent); color: white; padding: 14px 32px;
-        border-radius: 50px; text-decoration: none; font-weight: 700;
-        box-shadow: 0 4px 12px rgba(13, 148, 136, 0.3);
-        transition: all 0.3s ease;
-    }
-    .btn-secondary {
-        background: white; color: var(--text-primary); padding: 14px 32px;
-        border-radius: 50px; text-decoration: none; font-weight: 700;
-        border: 1px solid #e2e8f0; transition: all 0.3s ease;
-    }
-    .btn-primary:hover { transform: translateY(-3px); background: var(--accent-hover); box-shadow: 0 6px 15px rgba(13, 148, 136, 0.4); }
-    .btn-secondary:hover { background: #f8fafc; border-color: #cbd5e1; transform: translateY(-3px); }
 
-    /* Hero Graphic (Decorative) */
-    .hero-graphic { position: relative; width: 400px; height: 350px; display: none; }
-    @media(min-width: 900px) { .hero-graphic { display: block; } }
-    .stat-card {
-        position: absolute; background: white; padding: 2rem;
-        border-radius: 16px; box-shadow: 0 20px 40px rgba(0,0,0,0.06);
-        border: 1px solid rgba(0,0,0,0.03); display: flex; flex-direction: column;
-        transition: transform 0.5s ease;
+    /* 黑色半透明遮罩 */
+    .hero-overlay {
+        position: absolute;
+        top: 0; left: 0; width: 100%; height: 100%;
+        background: linear-gradient(to bottom, rgba(0,0,0,0.3), rgba(0,0,0,0.7)); /* 渐变遮罩 */
+        z-index: 1;
     }
-    .hero-section:hover .float-1 { transform: translateY(-10px) rotate(3deg); }
-    .hero-section:hover .float-2 { transform: translateY(10px) rotate(-3deg); }
+
+    .hero-container { 
+        position: relative; 
+        z-index: 2; /* 确保文字在遮罩之上 */
+        text-align: center; /* 文字居中 */
+        max-width: 900px;
+    }
     
-    .float-1 { top: 20px; right: 20px; transform: rotate(3deg); }
-    .float-2 { bottom: 60px; left: 0; transform: rotate(-3deg); }
-    .stat-num { font-family: var(--font-head); font-size: 3rem; font-weight: 700; color: var(--accent); line-height: 1; }
-    .stat-label { font-size: 0.9rem; color: var(--text-secondary); font-weight: 700; text-transform: uppercase; margin-top: 5px; }
+    .hero-content {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    /* 标签样式微调 */
+    .pill { 
+        display: inline-block; 
+        background: rgba(13, 148, 136, 0.9); /* 半透明 Teal */
+        color: white; 
+        padding: 6px 16px; 
+        border-radius: 50px; 
+        font-size: 0.85rem; 
+        font-weight: 700; 
+        text-transform: uppercase; 
+        letter-spacing: 1px;
+        margin-bottom: 2rem; 
+        backdrop-filter: blur(4px);
+    }
+
+    h1 { 
+        font-family: var(--font-head); 
+        font-size: 4rem; 
+        line-height: 1.1; 
+        margin: 0 0 1.5rem 0; 
+        color: white; 
+        letter-spacing: -1px;
+        text-shadow: 0 2px 10px rgba(0,0,0,0.3); /* 增加文字阴影，防止背景过亮看不清 */
+    }
+
+    .sub-heading { 
+        font-family: var(--font-body); 
+        font-size: 1.4rem; 
+        font-weight: 400; 
+        color: rgba(255,255,255,0.9); 
+        margin-bottom: 2rem; 
+        line-height: 1.5;
+        max-width: 800px;
+    }
+
+    .hero-desc { 
+        font-size: 1.2rem; 
+        color: rgba(255,255,255,0.8); 
+        margin-bottom: 3rem; 
+        max-width: 700px; 
+        line-height: 1.7;
+    }
+
+    /* 按钮样式微调 - 适应深色背景 */
+    .hero-actions { display: flex; gap: 1.5rem; }
+    
+    .btn-primary { 
+        background: var(--accent); 
+        color: white; 
+        padding: 16px 36px; 
+        border-radius: 50px; 
+        font-weight: 700; 
+        font-size: 1.1rem;
+        box-shadow: 0 4px 15px rgba(0,0,0,0.3); 
+        transition: all 0.3s ease; 
+        border: 2px solid var(--accent);
+    }
+    
+    .btn-secondary { 
+        background: transparent; 
+        color: white; 
+        padding: 16px 36px; 
+        border-radius: 50px; 
+        font-weight: 700; 
+        font-size: 1.1rem;
+        border: 2px solid rgba(255,255,255,0.6); 
+        transition: all 0.3s ease; 
+        backdrop-filter: blur(5px);
+    }
+
+    .btn-primary:hover { 
+        background: var(--accent-hover); 
+        transform: translateY(-3px); 
+        border-color: var(--accent-hover);
+    }
+    
+    .btn-secondary:hover { 
+        background: white; 
+        color: var(--text-primary); 
+        border-color: white; 
+        transform: translateY(-3px); 
+    }
+
+    /* 右下角图片说明 */
+    .hero-caption {
+        position: absolute;
+        bottom: 10px;
+        right: 20px;
+        z-index: 2;
+        font-size: 0.7rem;
+        color: rgba(255,255,255,0.5);
+        max-width: 400px;
+        text-align: right;
+    }
+
+    /* 移动端适配 */
+    @media (max-width: 768px) {
+        .hero-section { height: auto; padding: 6rem 0; }
+        h1 { font-size: 2.8rem; }
+        .hero-actions { flex-direction: column; width: 100%; max-width: 300px; }
+        .btn-primary, .btn-secondary { width: 100%; text-align: center; }
+        .hero-caption { display: none; /* 手机端隐藏长caption以免遮挡 */ }
+    }
 
     /* --- Section Tag & Headers --- */
     .section-header-group { margin-bottom: 3rem; }
@@ -422,23 +590,142 @@
     }
     .section-sub { font-size: 1.2rem; color: var(--text-secondary); max-width: 600px; margin: 0 auto; }
 
-    /* --- Context --- */
-    .context-section { padding: 6rem 0; background: white; }
-    
-    .grid-3 { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2.5rem; }
-    .feature-card { 
-        padding: 2.5rem; background: var(--bg-light-gray); border-radius: 20px; 
-        transition: all 0.3s ease; border: 1px solid transparent;
+   /* --- Context Section (Updated) --- */
+    .context-section {
+        padding: 3rem 0;
+        background-color: white;
     }
-    .feature-card:hover { 
-        transform: translateY(-5px); 
-        background: white; 
-        box-shadow: 0 10px 30px rgba(0,0,0,0.05);
-        border-color: #e2e8f0;
+
+    /* 网格系统保持不变 */
+    .bento-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: auto auto auto;
+        gap: 1.25rem;
     }
-    .icon-box { font-size: 3rem; margin-bottom: 1.5rem; }
-    .feature-card h3 { font-family: var(--font-head); font-size: 1.4rem; margin: 0 0 0.8rem 0; }
-    .feature-card p { font-size: 1rem; color: var(--text-secondary); margin: 0; line-height: 1.7; }
+
+    /* 卡片基础样式 */
+    .bento-card {
+        background: var(--bg-light-gray);
+        border-radius: 16px;
+        padding: 1.8rem;
+        border: 1px solid #e2e8f0;
+        transition: all 0.2s ease;
+    }
+    .bento-card:hover {
+        border-color: var(--accent);
+        box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+    }
+
+    /* Definitions */
+    .justice-def .card-header { display: flex; align-items: center; gap: 10px; margin-bottom: 0.8rem; }
+    .justice-def h3 { font-family: var(--font-head); font-size: 1.1rem; margin: 0; color: var(--text-primary); }
+    .justice-def .icon { font-size: 1.2rem; }
+    .justice-def p { font-size: 0.95rem; line-height: 1.6; color: var(--text-secondary); margin: 0; }
+
+    /* --- Narrative Flow (单列垂直布局) --- */
+    .narrative-flow {
+        grid-column: span 2;
+        background: white;
+        display: flex;       /* 改为 Flex */
+        flex-direction: column; /* 垂直排列 */
+        gap: 0;              /* 间距由 padding 控制 */
+        padding: 0;          /* 移除默认 padding，由内部块控制 */
+        overflow: hidden;    /* 确保圆角 */
+    }
+
+    .narrative-block {
+        padding: 1rem; /* 增加内部空间 */
+    }
+
+    .narrative-block h4 {
+        font-family: var(--font-head);
+        font-size: 1.25rem;
+        color: var(--text-primary);
+        margin: 0 0 1rem 0;
+        letter-spacing: -0.5px;
+    }
+
+    .narrative-block p {
+        font-size: 1.05rem; /* 稍微加大字号易读 */
+        line-height: 1.7;
+        color: var(--text-secondary);
+        margin-bottom: 1rem;
+        text-align: left;
+    }
+    .narrative-block p:last-child { margin-bottom: 0; }
+
+    /* 分割线 */
+    .narrative-divider {
+        height: 1px;
+        background: linear-gradient(to right, transparent, #e2e8f0, transparent);
+        width: 100%;
+    }
+
+    /* 底部块背景微调，形成区分 */
+    .bottom-block {
+        background: rgba(240, 253, 250, 0.3); /* 极淡的薄荷绿背景 */
+    }
+
+    /* 样式化的高亮词 (Pills) */
+    .highlight-pill {
+        font-weight: 700;
+        padding: 2px 6px;
+        border-radius: 4px;
+        font-size: 0.95em;
+    }
+    .highlight-pill.blue { color: var(--blue-model); background: rgba(37, 99, 235, 0.08); }
+    .highlight-pill.red { color: var(--red-model); background: rgba(220, 38, 38, 0.08); }
+    .bold-text { font-weight: 700; color: var(--text-primary); }
+
+    /* 引用块 (无斜体) */
+    .highlight-quote {
+        margin-top: 1.5rem;
+        background: white;
+        padding: 1.5rem;
+        border-radius: 12px;
+        border-left: 4px solid var(--accent);
+        box-shadow: 0 2px 8px rgba(0,0,0,0.03);
+    }
+    .highlight-quote p {
+        font-size: 1.1rem;
+        margin: 0;
+        font-weight: 500; /* 半粗体代替斜体 */
+        font-style: normal; /* 强制不倾斜 */
+        color: var(--text-primary);
+        line-height: 1.6;
+    }
+    .mark { 
+        background: linear-gradient(120deg, rgba(13, 148, 136, 0.15) 0%, rgba(13, 148, 136, 0.15) 100%);
+        background-repeat: no-repeat;
+        background-size: 100% 40%;
+        background-position: 0 88%; /* 下划线高亮效果 */
+        color: var(--text-primary);
+    }
+
+    /* Info Boxes */
+    .info-box h4 { font-family: var(--font-head); font-size: 1.1rem; margin: 0 0 0.8rem 0; }
+    .info-box p { font-size: 1rem; line-height: 1.6; margin-bottom: 0.8rem; }
+
+    /* Why Philly */
+    .info-box.accent { background: var(--bg-alt); border-color: var(--accent-light); }
+    .info-box.accent h4 { color: var(--accent-hover); }
+    .goal-list { margin: 0; padding-left: 1.2rem; }
+    .goal-list li { font-size: 0.95rem; color: var(--text-primary); margin-bottom: 6px; }
+
+    /* CAA */
+    .info-box.dark { background: var(--text-primary); color: #e2e8f0; border: none; }
+    .info-box.dark h4 { color: white; border-bottom: 1px solid rgba(255,255,255,0.2); padding-bottom: 8px; display: inline-block; }
+    .info-box.dark p { opacity: 0.9; }
+    .small-note { font-size: 0.85rem; margin-top: 10px; color: #cbd5e1; }
+    .impact-note { font-weight: 700; color: var(--accent-light); margin-top: 10px; font-size: 0.9rem; }
+
+    /* Mobile */
+    @media (max-width: 768px) {
+        .bento-grid { grid-template-columns: 1fr; gap: 1.5rem; }
+        .narrative-flow { grid-column: span 1; }
+        .narrative-block { padding: 1.5rem; }
+    }
 
     /* --- Concepts (Framework) --- */
     .framework-section { padding: 6rem 0; background: var(--bg-alt); }
@@ -483,6 +770,25 @@
     .loading-state { height: 750px; display: flex; flex-direction: column; align-items: center; justify-content: center; color: var(--text-secondary); }
     .spinner { width: 40px; height: 40px; border: 3px solid #e2e8f0; border-top-color: var(--accent); border-radius: 50%; animation: spin 1s infinite linear; margin-bottom: 1rem; }
     @keyframes spin { to { transform: rotate(360deg); } }
+
+    /* 新增：数据来源样式 */
+    .data-sources-box {
+        margin-top: 1.5rem;
+        padding: 1rem 1.5rem;
+        background-color: var(--bg-light-gray);
+        border-radius: 12px;
+        border: 1px solid #e2e8f0;
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        gap: 10px;
+        font-size: 0.85rem;
+        color: var(--text-secondary);
+    }
+    .source-label { font-weight: 700; text-transform: uppercase; color: var(--text-primary); margin-right: 5px; }
+    .source-links a { text-decoration: none; color: var(--accent); font-weight: 500; transition: color 0.2s; }
+    .source-links a:hover { color: var(--accent-hover); text-decoration: underline; }
+    .source-links .divider { margin: 0 8px; color: #cbd5e1; }
 
     /* --- Methodology (Behind the Scenes) --- */
     .method-section {

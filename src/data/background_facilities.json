@@ -1,0 +1,2804 @@
+[
+  {
+    "name": "PUROLITE INC/MFG CHEM",
+    "lat": 40.0044,
+    "lng": -75.1145,
+    "id": "110000336878"
+  },
+  {
+    "name": "MIPC LLC/ PHILA",
+    "lat": 40.012261,
+    "lng": -75.111969,
+    "id": "110000872299"
+  },
+  {
+    "name": "PBF LOGISTICS PRODUCTS TERMINAL/67TH ST",
+    "lat": 39.911701,
+    "lng": -75.218773,
+    "id": "110002065997"
+  },
+  {
+    "name": "PHILLY SHIPYARD INC (PSI) [FORMERLY AKER SHIPYARD]",
+    "lat": 39.89168,
+    "lng": -75.169055,
+    "id": "110006368206"
+  },
+  {
+    "name": "PHILA INTL AIRPORT/PHILA",
+    "lat": 39.875624,
+    "lng": -75.245164,
+    "id": "110007027289"
+  },
+  {
+    "name": "FRANKFORD HOSPITAL ARIA",
+    "lat": 40.020291,
+    "lng": -75.08043,
+    "id": "110007792022"
+  },
+  {
+    "name": "ENERGY TRANSFER MKT & TERM LP/FT MIFFLIN",
+    "lat": 39.871389,
+    "lng": -75.2175,
+    "id": "110012692407"
+  },
+  {
+    "name": "NAVAL SURFACE WARFARE CENTER - PHILADELPHIA DIVISION",
+    "lat": 39.89003,
+    "lng": -75.17587,
+    "id": "110032890209"
+  },
+  {
+    "name": "SUNGARD RECOVERY SVC INC/BROAD ST PHILA",
+    "lat": 39.95958,
+    "lng": -75.16205,
+    "id": "110038444528"
+  },
+  {
+    "name": "PHILA PRISON SYS/CORR FAC",
+    "lat": 40.031275,
+    "lng": -75.021765,
+    "id": "110041235865"
+  },
+  {
+    "name": "SEPTA ALLEGHENY",
+    "lat": 40.00432,
+    "lng": -75.17401,
+    "id": "110044317646"
+  },
+  {
+    "name": "SUN CHEM CORP/HUNTING PARK PLT",
+    "lat": 40.00273,
+    "lng": -75.18434,
+    "id": "110000336761"
+  },
+  {
+    "name": "CONSTELLATION GENERATING CO/RICHMOND",
+    "lat": 39.98539,
+    "lng": -75.072951,
+    "id": "110000336958"
+  },
+  {
+    "name": "PES/SCHUYLKILL TANK FARM",
+    "lat": 39.9147,
+    "lng": -75.2005,
+    "id": "110000336994"
+  },
+  {
+    "name": "CONSTELLATION GENERATION CO/SCHUYLKILL STA",
+    "lat": 39.943069,
+    "lng": -75.190723,
+    "id": "110000337029"
+  },
+  {
+    "name": "PHILA GAS WORKS/RICHMOND PLT",
+    "lat": 39.98361,
+    "lng": -75.088364,
+    "id": "110000878756"
+  },
+  {
+    "name": "EXELON GENERATION CO/SOUTHWARK",
+    "lat": 39.91383,
+    "lng": -75.13747,
+    "id": "110001069254"
+  },
+  {
+    "name": "UNITED PARCEL SVC INC/PHILA AIR HUB",
+    "lat": 39.861275,
+    "lng": -75.249374,
+    "id": "110001100291"
+  },
+  {
+    "name": "KINDER MORGAN LIQUIDS TERM/PHILA",
+    "lat": 39.97874,
+    "lng": -75.09763,
+    "id": "110001203448"
+  },
+  {
+    "name": "TEMPLE UNIV/ MAIN CAMPUS",
+    "lat": 39.979354,
+    "lng": -75.151017,
+    "id": "110001223104"
+  },
+  {
+    "name": "VICINITY ENERGY EDISON/PHILA",
+    "lat": 39.949037,
+    "lng": -75.155787,
+    "id": "110001224648"
+  },
+  {
+    "name": "CROSS CONNECT SOLUTIONS",
+    "lat": 39.95995,
+    "lng": -75.16196,
+    "id": "110064521860"
+  },
+  {
+    "name": "CINTAS PHILADELPHIA (SANDMEYER)",
+    "lat": 40.11146,
+    "lng": -75.03307,
+    "id": "110070050035"
+  },
+  {
+    "name": "FRONTIDA BIOPHARM INC (FORMERLY MUTUAL PHARMACEUTICAL INC)",
+    "lat": 40.01863,
+    "lng": -75.09271,
+    "id": "110070716838"
+  },
+  {
+    "name": "THE STERLING APARTMENT HOMES",
+    "lat": 39.95421,
+    "lng": -75.169971,
+    "id": "110070740292"
+  },
+  {
+    "name": "UNIVERSITY CITY SCIENCE CENTER",
+    "lat": 39.9574,
+    "lng": -75.19765,
+    "id": "110071241176"
+  },
+  {
+    "name": "H5 DATA CENTERS",
+    "lat": 39.96271,
+    "lng": -75.16308,
+    "id": "110071294369"
+  },
+  {
+    "name": "365 DATA CENTERS",
+    "lat": 39.96271,
+    "lng": -75.16308,
+    "id": "110071335026"
+  },
+  {
+    "name": "CHILDRENS HOSP OF PHILA/ PHILA",
+    "lat": 39.947892,
+    "lng": -75.192753,
+    "id": "110071498954"
+  },
+  {
+    "name": "GRAYS FERRY COGEN PARTNERSHIP/PHILA",
+    "lat": 39.9425,
+    "lng": -75.1886,
+    "id": "110071723052"
+  },
+  {
+    "name": "WEYERHAEUSER NR COMPANY, PHILADELPHIA FACILITY",
+    "lat": 32.762663,
+    "lng": -89.117794,
+    "id": "110002342643"
+  },
+  {
+    "name": "KIRKBRIDE CTR/PSYCHIATRIC HOSP",
+    "lat": 39.96111,
+    "lng": -75.219447,
+    "id": "110004856040"
+  },
+  {
+    "name": "WADE TECHNOLOGY INC",
+    "lat": 39.96071,
+    "lng": -75.15633,
+    "id": "110010704121"
+  },
+  {
+    "name": "TEMPLE UNIV EPISC HOSP/LEHIGH AVE",
+    "lat": 39.9909,
+    "lng": -75.13088,
+    "id": "110012516330"
+  },
+  {
+    "name": "GIRARD COLL/BOARDING SCH",
+    "lat": 39.97289,
+    "lng": -75.17031,
+    "id": "110021110885"
+  },
+  {
+    "name": "WILLIAM J GREEN JR FED BLDG/GSA",
+    "lat": 39.95276,
+    "lng": -75.14993,
+    "id": "110023737134"
+  },
+  {
+    "name": "COATING & CONVERTING TECH CORP/ADHESIVE",
+    "lat": 39.92626,
+    "lng": -75.14588,
+    "id": "110024522462"
+  },
+  {
+    "name": "VA MED CTR AND NHCU/PHILA",
+    "lat": 39.94983,
+    "lng": -75.20117,
+    "id": "110030479756"
+  },
+  {
+    "name": "ADVANSIX (FORMERLY HONEYWELL/FRANKFORD PLT)",
+    "lat": 40.005901,
+    "lng": -75.072103,
+    "id": "110038495768"
+  },
+  {
+    "name": "THOMAS JEFFERSON UNIV/PHILA",
+    "lat": 39.94778,
+    "lng": -75.16028,
+    "id": "110040631297"
+  },
+  {
+    "name": "PHILADELPHIA SHIP REPAIR",
+    "lat": 39.884062,
+    "lng": -75.184375,
+    "id": "110046100544"
+  },
+  {
+    "name": "TEMPLE UNIV HEALTH SCIENCES CAMPUS/STEAM",
+    "lat": 40.00469,
+    "lng": -75.15224,
+    "id": "110064224735"
+  },
+  {
+    "name": "CARDONE IND INC/AUTO PARTS REMFG PLT 11-",
+    "lat": 40.03795,
+    "lng": -75.1119,
+    "id": "110000336636"
+  },
+  {
+    "name": "CONSTELLATION GENERATION CO/DELAWARE STA",
+    "lat": 39.9671,
+    "lng": -75.1269,
+    "id": "110000336716"
+  },
+  {
+    "name": "INEOS COMPOSITES US/PHILA",
+    "lat": 39.909557,
+    "lng": -75.130454,
+    "id": "110000337047"
+  },
+  {
+    "name": "VICINITY ENERGY/SCHUYLKILL STA",
+    "lat": 39.9425,
+    "lng": -75.1886,
+    "id": "110000744990"
+  },
+  {
+    "name": "VICINITY ENERGY EFFICIENCY PA, LLC        ",
+    "lat": 39.9425,
+    "lng": -75.1886,
+    "id": "110000744990"
+  },
+  {
+    "name": "UNIV OF PA/PHILA",
+    "lat": 39.952619,
+    "lng": -75.192879,
+    "id": "110000880547"
+  },
+  {
+    "name": "CLEAN EARTH OF PHILA LLC/PHILA",
+    "lat": 39.9206,
+    "lng": -75.21425,
+    "id": "110000919784"
+  },
+  {
+    "name": "PTR BALER AND COMPACTOR/PHILA",
+    "lat": 39.99368,
+    "lng": -75.10398,
+    "id": "110001022768"
+  },
+  {
+    "name": "JEANES HOSP/PHILA",
+    "lat": 40.06863,
+    "lng": -75.08697,
+    "id": "110001039965"
+  },
+  {
+    "name": "NORTHEAST WPCP/PHILA",
+    "lat": 39.99141,
+    "lng": -75.08503,
+    "id": "110001076978"
+  },
+  {
+    "name": "NEWMAN & CO/PAPER RECYCLER",
+    "lat": 40.01463,
+    "lng": -75.05434,
+    "id": "110001203402"
+  },
+  {
+    "name": "RIVERSIDE MATERIALS INC/ASPHALT PLT",
+    "lat": 39.98247,
+    "lng": -75.10098,
+    "id": "110001209120"
+  },
+  {
+    "name": "CATALANT PHARMA SOLUTIONS LLC",
+    "lat": 40.083,
+    "lng": -75.00081,
+    "id": "110001209996"
+  },
+  {
+    "name": "ALBERT EINSTEIN MED CTR/HOSP",
+    "lat": 40.03694,
+    "lng": -75.14464,
+    "id": "110001220170"
+  },
+  {
+    "name": "VERIZON LOCUST CENTRAL OFFICE",
+    "lat": 39.95494,
+    "lng": -75.16762,
+    "id": "110044317637"
+  },
+  {
+    "name": "ARWAY LINEN RENTAL",
+    "lat": 40.01647,
+    "lng": -75.079977,
+    "id": "110046273581"
+  },
+  {
+    "name": "PA CONVENTION CTR ANNEX/BROAD ST",
+    "lat": 40.242057,
+    "lng": -75.283204,
+    "id": "110054889625"
+  },
+  {
+    "name": "SOUTHEASTERN PENNSYLVANIA TRANSPORTATION",
+    "lat": 40.10784,
+    "lng": -75.15189,
+    "id": "110055617275"
+  },
+  {
+    "name": "ASTRAZENECA PA",
+    "lat": 40.083,
+    "lng": -75.00081,
+    "id": "110056437084"
+  },
+  {
+    "name": "LINCOLN FINANCIAL FIELD",
+    "lat": 39.90134,
+    "lng": -75.16529,
+    "id": "110057119675"
+  },
+  {
+    "name": "DGM POLISHING & REFINISHING",
+    "lat": 40.03898,
+    "lng": -75.01804,
+    "id": "110057700867"
+  },
+  {
+    "name": "PHILADELPHIA RENEWABLE BIO-FUELS LLC",
+    "lat": 39.89248,
+    "lng": -75.22255,
+    "id": "110063618492"
+  },
+  {
+    "name": "SEPTA - COMLY BUS FACILITY",
+    "lat": 40.03007,
+    "lng": -75.07424,
+    "id": "110063619455"
+  },
+  {
+    "name": "ARDEX LAB INC/CLEANING & POLISHING PREP",
+    "lat": 40.11019,
+    "lng": -75.00313,
+    "id": "110000336592"
+  },
+  {
+    "name": "AMUNEAL MFG CORP/PHILA",
+    "lat": 40.016593,
+    "lng": -75.081845,
+    "id": "110000336707"
+  },
+  {
+    "name": "DIETZ & WATSON INC/PHILA",
+    "lat": 40.01667,
+    "lng": -75.05,
+    "id": "110000336887"
+  },
+  {
+    "name": "PHILA ENERGY SOL REF/ PES",
+    "lat": 39.9147,
+    "lng": -75.2005,
+    "id": "110000336994"
+  },
+  {
+    "name": "PHILADELPHIA WATER DEPARTMENT (PWD): BELMONT WATER TREATMENT PLANT",
+    "lat": 40.0,
+    "lng": -75.218611,
+    "id": "110000540451"
+  },
+  {
+    "name": "PHILA WATER DEPT/STP SW",
+    "lat": 39.88613,
+    "lng": -75.21825,
+    "id": "110000542119"
+  },
+  {
+    "name": "HILLOCK ANODIZING, INC.",
+    "lat": 40.014534,
+    "lng": -75.056562,
+    "id": "110000818241"
+  },
+  {
+    "name": "HILLOCK ANODIZING INC",
+    "lat": 40.014534,
+    "lng": -75.056562,
+    "id": "110000818241"
+  },
+  {
+    "name": "FOX CHASE CANCER CTR/PHILA",
+    "lat": 40.07355,
+    "lng": -75.09028,
+    "id": "110000818312"
+  },
+  {
+    "name": "PRESB MED CTR/PHILA",
+    "lat": 39.9576,
+    "lng": -75.19947,
+    "id": "110000818544"
+  },
+  {
+    "name": "SEPTA BERRIDGE/COURTLAND MAINT SHOP",
+    "lat": 40.02203,
+    "lng": -75.12831,
+    "id": "110000818848"
+  },
+  {
+    "name": "PHILADELPHIA PUBLIC SERVICES BUILDING",
+    "lat": 39.95995,
+    "lng": -75.16197,
+    "id": "110000878774"
+  },
+  {
+    "name": "BELLEVUE ASSOCIATES (COGENERATION PLANT)",
+    "lat": 39.94899,
+    "lng": -75.16432,
+    "id": "110000921539"
+  },
+  {
+    "name": "HAHNEMANN HOSP/PHILA",
+    "lat": 39.9571,
+    "lng": -75.1627,
+    "id": "110001007516"
+  },
+  {
+    "name": "CONSTITUTIONAL HEALTH PLAZA ",
+    "lat": 39.92664,
+    "lng": -75.16919,
+    "id": "110001013643"
+  },
+  {
+    "name": "MODEL FINISHING CO/PHILA",
+    "lat": 40.02607,
+    "lng": -75.03199,
+    "id": "110001029789"
+  },
+  {
+    "name": "DREXEL UNIVERSITY/QUEEN LANE CAMPUS",
+    "lat": 40.02043,
+    "lng": -75.18041,
+    "id": "110001033916"
+  },
+  {
+    "name": "LASALLE UNIV/W OLNEY AVE",
+    "lat": 40.03928,
+    "lng": -75.15283,
+    "id": "110001035969"
+  },
+  {
+    "name": "FRANKFORD PLATING INC",
+    "lat": 40.00257,
+    "lng": -75.07715,
+    "id": "110001052253"
+  },
+  {
+    "name": "JOWITT AND RODGERS CO/STATE RD FAC",
+    "lat": 40.04837,
+    "lng": -74.9904,
+    "id": "110001052672"
+  },
+  {
+    "name": "RR DONNELLEY/BAUM PLT",
+    "lat": 40.11046,
+    "lng": -75.04985,
+    "id": "110001053234"
+  },
+  {
+    "name": "KINGSBURY COMPANY",
+    "lat": 40.08328,
+    "lng": -74.99569,
+    "id": "110001053573"
+  },
+  {
+    "name": "FEDERAL BUR OF PRISONS/ PHILA COURT",
+    "lat": 40.37547,
+    "lng": -75.29499,
+    "id": "110001104787"
+  },
+  {
+    "name": "CHESTNUT HILL HOSP/PHILA",
+    "lat": 40.07907,
+    "lng": -75.21342,
+    "id": "110001127520"
+  },
+  {
+    "name": "ARIA HEALTH/TORRESDALE CAMP",
+    "lat": 40.072023,
+    "lng": -74.981129,
+    "id": "110001144609"
+  },
+  {
+    "name": "PECO ENERGY/S COLUMBUS BLVD",
+    "lat": 39.924905,
+    "lng": -75.143863,
+    "id": "110001202172"
+  },
+  {
+    "name": "NAVAL FOUNDRY AND PROPELLER CTR/PHILA",
+    "lat": 39.891333,
+    "lng": -75.180667,
+    "id": "110001203359"
+  },
+  {
+    "name": "WEBER DISPLAY & PACKAGING",
+    "lat": 39.98666,
+    "lng": -75.09438,
+    "id": "110001203395"
+  },
+  {
+    "name": "DEER MEADOWS",
+    "lat": 40.061866,
+    "lng": -75.042806,
+    "id": "110001208470"
+  },
+  {
+    "name": "METHODIST HOSP/PHILA",
+    "lat": 39.92189,
+    "lng": -75.17022,
+    "id": "110001208960"
+  },
+  {
+    "name": "NAZARETH HOSP/PHILA",
+    "lat": 40.05884,
+    "lng": -75.04375,
+    "id": "110001208979"
+  },
+  {
+    "name": "FALLS CTR/IRONSTONE",
+    "lat": 40.01313,
+    "lng": -75.183865,
+    "id": "110001208997"
+  },
+  {
+    "name": "CRAMCO INC.",
+    "lat": 39.9886,
+    "lng": -75.11336,
+    "id": "110001212287"
+  },
+  {
+    "name": "PHILADELPHIAN CONDOMINIUMS/PHILA",
+    "lat": 39.96611,
+    "lng": -75.17805,
+    "id": "110001212330"
+  },
+  {
+    "name": "COMMANDER NAVY REGION MIDATLANTIC/HOST S",
+    "lat": 40.04624,
+    "lng": -75.09303,
+    "id": "110001213197"
+  },
+  {
+    "name": "SMITH EDWARDS DUNLAP CO/ALLEGHENY AVE",
+    "lat": 39.982486,
+    "lng": -75.100993,
+    "id": "110001213393"
+  },
+  {
+    "name": "MERCY HOSP OF PHILA/54TH ST",
+    "lat": 39.95246,
+    "lng": -75.23032,
+    "id": "110001214347"
+  },
+  {
+    "name": "PARK TOWNE PLACE APT/PHILA",
+    "lat": 39.96043,
+    "lng": -75.175613,
+    "id": "110001217031"
+  },
+  {
+    "name": "DOMESTIC LINEN SUPPLY CO INC",
+    "lat": 40.00724,
+    "lng": -75.09106,
+    "id": "110001218227"
+  },
+  {
+    "name": "BELMONT CENTER FOR TREATMENT",
+    "lat": 40.002189,
+    "lng": -75.215003,
+    "id": "110001218263"
+  },
+  {
+    "name": "RICHARD S. BURNS AND COMPANY INC.",
+    "lat": 40.01593,
+    "lng": -75.12964,
+    "id": "110064430511"
+  },
+  {
+    "name": "PENN JERSEY PAPER",
+    "lat": 40.07346,
+    "lng": -75.02813,
+    "id": "110064432582"
+  },
+  {
+    "name": "WUXI APPTEC INC. ",
+    "lat": 39.90179,
+    "lng": -75.19377,
+    "id": "110064457421"
+  },
+  {
+    "name": "TRANSFLO TERMINAL SERVICES",
+    "lat": 39.9186459285676,
+    "lng": -75.1862605379928,
+    "id": "110064847741"
+  },
+  {
+    "name": "IVY HILL CEMETERY COMPANY",
+    "lat": 40.07444,
+    "lng": -75.17781,
+    "id": "110067245788"
+  },
+  {
+    "name": "ECO-ENERGY DISTRIBUTION SERVICES",
+    "lat": 39.914643837544,
+    "lng": -75.1540285480784,
+    "id": "110069469275"
+  },
+  {
+    "name": "SEPTA FRANKFORD TRANSPORTATION COMPLEX",
+    "lat": 40.02,
+    "lng": -75.08,
+    "id": "110070005238"
+  },
+  {
+    "name": "THE VANGUARD GROUP, INC",
+    "lat": 40.1128,
+    "lng": -74.99758,
+    "id": "110070029427"
+  },
+  {
+    "name": "CINTAS PHILADELPHIA (JEFFERSON)",
+    "lat": 39.97538,
+    "lng": -75.21611,
+    "id": "110070050160"
+  },
+  {
+    "name": "EASTERN CREAMATORY",
+    "lat": 40.0108,
+    "lng": -75.16493,
+    "id": "110070102311"
+  },
+  {
+    "name": "SEPTA - FERN ROCK SUBWAY SHOP",
+    "lat": 40.0372461008278,
+    "lng": -75.1451389331146,
+    "id": "110070144497"
+  },
+  {
+    "name": "NAVY YARD PEAKER STATION",
+    "lat": 39.88948,
+    "lng": -75.18504,
+    "id": "110070144498"
+  },
+  {
+    "name": "METRO CREMATORY & TRADERS, INC.",
+    "lat": 40.03198,
+    "lng": -75.0523,
+    "id": "110070236194"
+  },
+  {
+    "name": "PHILADELPHIA ZOO",
+    "lat": 39.97516,
+    "lng": -75.19504,
+    "id": "110070251782"
+  },
+  {
+    "name": "SEPTA SOUTHERN BUS FACILITY",
+    "lat": 39.916595,
+    "lng": -75.180287,
+    "id": "110070262706"
+  },
+  {
+    "name": "PEPSI COLA BOTTLING",
+    "lat": 40.10395,
+    "lng": -75.00227,
+    "id": "110070273641"
+  },
+  {
+    "name": "AXALTA COATING SYSTEMS",
+    "lat": 39.891836,
+    "lng": -75.169731,
+    "id": "110070434921"
+  },
+  {
+    "name": "TASTEPOINT",
+    "lat": 39.89729,
+    "lng": -75.23305,
+    "id": "110070543999"
+  },
+  {
+    "name": "THE LITS BUILDING",
+    "lat": 39.95094,
+    "lng": -75.152,
+    "id": "110070544093"
+  },
+  {
+    "name": "THE COMCAST CENTER",
+    "lat": 39.95402,
+    "lng": -75.16837,
+    "id": "110070551557"
+  },
+  {
+    "name": "MID ATLANTIC SOCIAL SECURITY CENTER",
+    "lat": 39.96086,
+    "lng": -75.1434,
+    "id": "110070666750"
+  },
+  {
+    "name": "HCP",
+    "lat": 39.949685,
+    "lng": -75.154413,
+    "id": "110070666752"
+  },
+  {
+    "name": "QUEEN LANE WATER TREATMENT PLANT - CITY OF PHILADELPHIA",
+    "lat": 40.01851,
+    "lng": -75.183267,
+    "id": "110070740351"
+  },
+  {
+    "name": "COMCAST CABLEVISION",
+    "lat": 40.108021,
+    "lng": -75.019965,
+    "id": "110071176586"
+  },
+  {
+    "name": "TIERPOINT - PHILADELPHIA",
+    "lat": 39.893562,
+    "lng": -75.166986,
+    "id": "110071241296"
+  },
+  {
+    "name": "SIMPSON HOUSE INC.",
+    "lat": 39.99295,
+    "lng": -75.21763,
+    "id": "110071312791"
+  },
+  {
+    "name": "LASALLE WEST CAMPUS/PHILA",
+    "lat": 40.0406,
+    "lng": -75.160963,
+    "id": "110071499141"
+  },
+  {
+    "name": "ALDEN PARK APARTMENTS",
+    "lat": 40.02563,
+    "lng": -75.18165,
+    "id": "110071537904"
+  },
+  {
+    "name": "PHILADELPHIA WATER DEPARTMENT (PWD): BAXTER WATER TREATMENT PLANT",
+    "lat": 40.043887,
+    "lng": -74.998045,
+    "id": "110071544588"
+  },
+  {
+    "name": "LUTHERAN THEOLOGICAL SEMINARY AT PHILADELPHIA",
+    "lat": 40.06148,
+    "lng": -75.19203,
+    "id": "110071544589"
+  },
+  {
+    "name": "KIMPTON HOTEL PALOMAR ",
+    "lat": 39.950835,
+    "lng": -75.168895,
+    "id": "110071813158"
+  },
+  {
+    "name": "PHILADELPHIA REFINERY OPERATIONS - EVERGREEN RESOURCES GROUP, LLC",
+    "lat": 39.921363,
+    "lng": -75.192212,
+    "id": "110071861920"
+  },
+  {
+    "name": "RYDER TRUCK RENTAL INC/BLUEGRASS RD",
+    "lat": 40.08049,
+    "lng": -75.02385,
+    "id": "110004862630"
+  },
+  {
+    "name": "BARTASH PUBLICATIONS",
+    "lat": 39.93366,
+    "lng": -75.21708,
+    "id": "110004878115"
+  },
+  {
+    "name": "ROXBOROUGH MEM HOSP/PHILA",
+    "lat": 40.02876,
+    "lng": -75.21043,
+    "id": "110004878552"
+  },
+  {
+    "name": "TDPS MATERIALS INC/ASPHALT PLT",
+    "lat": 40.00843,
+    "lng": -75.13124,
+    "id": "110006826079"
+  },
+  {
+    "name": "PHILA GAS WORKS/PASSYUNK PLT",
+    "lat": 39.920946,
+    "lng": -75.202402,
+    "id": "110007746341"
+  },
+  {
+    "name": "SEPTA - ELMWOOD TROLLEY SHOP",
+    "lat": 39.913988,
+    "lng": -75.242092,
+    "id": "110007777174"
+  },
+  {
+    "name": "SUPERIOR ASPHALT INC, PHILADELPHIA",
+    "lat": 32.80935,
+    "lng": -89.11861,
+    "id": "110008510708"
+  },
+  {
+    "name": "ZENTIS (FORMERLY SWEET OVATIONS LLC/TOMLINSON RD)",
+    "lat": 40.10475,
+    "lng": -75.01579,
+    "id": "110008996088"
+  },
+  {
+    "name": "FRIENDS HOSP/PHILA",
+    "lat": 40.027854,
+    "lng": -75.099857,
+    "id": "110010284922"
+  },
+  {
+    "name": "RICHARDS APEX INC/LUBE MFG PLT",
+    "lat": 40.02381,
+    "lng": -75.22035,
+    "id": "110011777274"
+  },
+  {
+    "name": "DREXEL UNIVERSITY",
+    "lat": 39.95561,
+    "lng": -75.18948,
+    "id": "110012172291"
+  },
+  {
+    "name": "SAINT JOSEPHS UNIV/PHILA",
+    "lat": 39.992753,
+    "lng": -75.239723,
+    "id": "110013836279"
+  },
+  {
+    "name": "PHILADELPHIA COLLEGE OF OSTEOPATHIC MEDICINE",
+    "lat": 40.004914,
+    "lng": -75.218602,
+    "id": "110016762644"
+  },
+  {
+    "name": "S.D. RICHMAN SONS, INC",
+    "lat": 39.996532,
+    "lng": -75.088976,
+    "id": "110017824112"
+  },
+  {
+    "name": "PHILADELPHIA CREMATORIES",
+    "lat": 40.02693,
+    "lng": -75.02957,
+    "id": "110018859546"
+  },
+  {
+    "name": "WUXI APPTEC INC",
+    "lat": 39.89363,
+    "lng": -75.16701,
+    "id": "110018897988"
+  },
+  {
+    "name": "CITIZENS BANK PARK/PHILA",
+    "lat": 39.904546,
+    "lng": -75.166947,
+    "id": "110028717770"
+  },
+  {
+    "name": "UNIV OF THE SCIENCES IN PHILA/PHILA",
+    "lat": 39.94682,
+    "lng": -75.20873,
+    "id": "110030479131"
+  },
+  {
+    "name": "TAYLOR MACHINE WORKS, PHILADELPHIA OPERATIONS",
+    "lat": 32.800563,
+    "lng": -89.11829,
+    "id": "110033139878"
+  },
+  {
+    "name": "GIRARD MED CTR/PHILA",
+    "lat": 39.97049,
+    "lng": -75.14998,
+    "id": "110039621905"
+  },
+  {
+    "name": "AT&T CORPORATION",
+    "lat": 39.94623,
+    "lng": -75.18421,
+    "id": "110039621914"
+  },
+  {
+    "name": "PA CONV CTR/ARCH ST",
+    "lat": 40.11978,
+    "lng": -75.33464,
+    "id": "110040509982"
+  },
+  {
+    "name": "VERIZON MKT CTRL OFC/RACE ST",
+    "lat": 39.95528,
+    "lng": -75.15496,
+    "id": "110040631288"
+  },
+  {
+    "name": "JEFFERSON UNIVERSITY EAST FALLS CAMPUS",
+    "lat": 40.022344,
+    "lng": -75.194219,
+    "id": "110040631304"
+  },
+  {
+    "name": "US MINT/PHILA",
+    "lat": 39.95367,
+    "lng": -75.14803,
+    "id": "110041225251"
+  },
+  {
+    "name": "ST CHRISTOPHERS HOSP FOR CHILDREN/PHILA",
+    "lat": 40.00769,
+    "lng": -75.12728,
+    "id": "110041235142"
+  },
+  {
+    "name": "FEDERAL RESERVE BANK/PHILA",
+    "lat": 39.95276,
+    "lng": -75.14993,
+    "id": "110041601969"
+  },
+  {
+    "name": "AMERICAN AIRLINES",
+    "lat": 39.87334,
+    "lng": -75.26256,
+    "id": "110042292970"
+  },
+  {
+    "name": "TASTY BAKING CO/PHILA NAVY YARD",
+    "lat": 39.898667,
+    "lng": -75.193291,
+    "id": "110043237716"
+  },
+  {
+    "name": "JERITH MANUFACTURING CO INC",
+    "lat": 40.0899402789216,
+    "lng": -74.9799876394173,
+    "id": "110043290382"
+  },
+  {
+    "name": "SJA CONSTRUCTION INC",
+    "lat": 39.90465,
+    "lng": -75.19363,
+    "id": "110044317619"
+  },
+  {
+    "name": "DELAVAU LLC",
+    "lat": 40.094876,
+    "lng": -75.014746,
+    "id": "110044317628"
+  },
+  {
+    "name": "SPD ELECTRICAL SYSTEMS",
+    "lat": 40.11131,
+    "lng": -74.99256,
+    "id": "110000336627"
+  },
+  {
+    "name": "PENN FISHING TACKLE",
+    "lat": 40.00478,
+    "lng": -75.1791,
+    "id": "110000336798"
+  },
+  {
+    "name": "ATLANTIC METALS",
+    "lat": 39.99204,
+    "lng": -75.06886,
+    "id": "110000336967"
+  },
+  {
+    "name": "PECO",
+    "lat": 39.943069,
+    "lng": -75.190723,
+    "id": "110000337029"
+  },
+  {
+    "name": "ASHLAND CHEMICAL",
+    "lat": 39.909557,
+    "lng": -75.130454,
+    "id": "110000337047"
+  },
+  {
+    "name": "TRIPLE SEVEN ICE COMPANY",
+    "lat": 39.90409,
+    "lng": -75.16347,
+    "id": "110000566557"
+  },
+  {
+    "name": "SUNOCO/BELMONT REMEDIATION SYS",
+    "lat": 39.921363,
+    "lng": -75.192212,
+    "id": "110000744366"
+  },
+  {
+    "name": "WISTAR INST/PHILA",
+    "lat": 39.95078,
+    "lng": -75.19531,
+    "id": "110000818349"
+  },
+  {
+    "name": "GARFIELD INDUSTRIES",
+    "lat": 40.01501,
+    "lng": -75.11042,
+    "id": "110000818811"
+  },
+  {
+    "name": "AECO, INC",
+    "lat": 40.048578,
+    "lng": -74.99473,
+    "id": "110000818857"
+  },
+  {
+    "name": "SEPTA - MIDVALE BUS DEPOT",
+    "lat": 40.01291,
+    "lng": -75.1691,
+    "id": "110000819320"
+  },
+  {
+    "name": "RECON AUTOMOTIVE MFG",
+    "lat": 39.90141,
+    "lng": -75.23143,
+    "id": "110000819614"
+  },
+  {
+    "name": "ROYAL CLEANERS",
+    "lat": 40.045441,
+    "lng": -75.088377,
+    "id": "110000989388"
+  },
+  {
+    "name": "FREEDOM INTERNATIONAL TRUCK",
+    "lat": 40.02008,
+    "lng": -75.04306,
+    "id": "110000997360"
+  },
+  {
+    "name": "DENARDO'S INC",
+    "lat": 39.92728,
+    "lng": -75.17886,
+    "id": "110001008864"
+  },
+  {
+    "name": "CARDINALS CLEANERS",
+    "lat": 40.01405,
+    "lng": -75.06658,
+    "id": "110001010584"
+  },
+  {
+    "name": "MAYFAIR CLEANERS",
+    "lat": 40.04915,
+    "lng": -75.09603,
+    "id": "110001010600"
+  },
+  {
+    "name": "BAMBI ONE HOUR CLEANERS",
+    "lat": 39.93059,
+    "lng": -75.16832,
+    "id": "110001010815"
+  },
+  {
+    "name": "STRAND CLEANERS",
+    "lat": 40.00748,
+    "lng": -75.15027,
+    "id": "110001011645"
+  },
+  {
+    "name": "CALBAR INC.",
+    "lat": 39.98464,
+    "lng": -75.12252,
+    "id": "110001012877"
+  },
+  {
+    "name": "LUIGI'S ONE HOUR CLEANERS",
+    "lat": 40.119205,
+    "lng": -75.017832,
+    "id": "110001013475"
+  },
+  {
+    "name": "MAGEE CLEANERS",
+    "lat": 40.03074,
+    "lng": -75.05474,
+    "id": "110001014063"
+  },
+  {
+    "name": "DALLAS CLEANERS INC",
+    "lat": 40.071006,
+    "lng": -75.161129,
+    "id": "110001014866"
+  },
+  {
+    "name": "PROFESSIONAL DRY CLEANERS",
+    "lat": 39.99444,
+    "lng": -75.13969,
+    "id": "110001015641"
+  },
+  {
+    "name": "DAWSONS CLEANERS",
+    "lat": 39.97638,
+    "lng": -75.23597,
+    "id": "110001015650"
+  },
+  {
+    "name": "ASHBOURNE CLEANERS",
+    "lat": 39.97244,
+    "lng": -75.25325,
+    "id": "110001020742"
+  },
+  {
+    "name": "FRANKFORD CLEANERS",
+    "lat": 40.08433,
+    "lng": -75.03527,
+    "id": "110001021288"
+  },
+  {
+    "name": "ICS CORP",
+    "lat": 39.97344,
+    "lng": -75.11899,
+    "id": "110001023008"
+  },
+  {
+    "name": "MODERN OFFICE EQUIPMENT",
+    "lat": 40.026456,
+    "lng": -75.030375,
+    "id": "110001023883"
+  },
+  {
+    "name": "ROXBORO DRY CLEANERS",
+    "lat": 40.06926,
+    "lng": -75.2406,
+    "id": "110001026096"
+  },
+  {
+    "name": "WEST PHILA R C H S GIRLS",
+    "lat": 39.95682,
+    "lng": -75.2118,
+    "id": "110001026773"
+  },
+  {
+    "name": "VALET CLEANERS",
+    "lat": 40.096124,
+    "lng": -74.976498,
+    "id": "110001027273"
+  },
+  {
+    "name": "SYE'S FABRIC CARE INC.",
+    "lat": 39.93421,
+    "lng": -75.16372,
+    "id": "110001027638"
+  },
+  {
+    "name": "KWAK'S DRY CLEANERS",
+    "lat": 39.97045,
+    "lng": -75.14838,
+    "id": "110001028370"
+  },
+  {
+    "name": "HI-LAD CLEANERS",
+    "lat": 39.97666,
+    "lng": -75.23356,
+    "id": "110001028904"
+  },
+  {
+    "name": "BETTY BRITE ONE HOUR",
+    "lat": 40.082607,
+    "lng": -75.049587,
+    "id": "110001033952"
+  },
+  {
+    "name": "BETTY BRITE CLEANERS",
+    "lat": 39.99148,
+    "lng": -75.22528,
+    "id": "110001033961"
+  },
+  {
+    "name": "CLASSIC BODY WORX",
+    "lat": 40.09821,
+    "lng": -75.03041,
+    "id": "110001034620"
+  },
+  {
+    "name": "HYGRADE FOOD PROD",
+    "lat": 39.88271,
+    "lng": -75.2262,
+    "id": "110001035022"
+  },
+  {
+    "name": "HOST CLEANERS",
+    "lat": 39.93669,
+    "lng": -75.17741,
+    "id": "110001035273"
+  },
+  {
+    "name": "OLYMPIC CLEANERS",
+    "lat": 40.01066,
+    "lng": -75.08885,
+    "id": "110001037431"
+  },
+  {
+    "name": "PARKLANE CUSTOM CLEANERS",
+    "lat": 40.131853,
+    "lng": -75.010714,
+    "id": "110001038822"
+  },
+  {
+    "name": "HOPE CLEANERS",
+    "lat": 40.04421,
+    "lng": -75.10235,
+    "id": "110001039313"
+  },
+  {
+    "name": "HAPPY DRY CLEANING & LAUNDRY",
+    "lat": 40.07201,
+    "lng": -75.17867,
+    "id": "110001039322"
+  },
+  {
+    "name": "HAPPY CLEANERS",
+    "lat": 40.07201,
+    "lng": -75.17867,
+    "id": "110001039322"
+  },
+  {
+    "name": "LEE'S CLEANERS",
+    "lat": 40.056738,
+    "lng": -75.030597,
+    "id": "110001041499"
+  },
+  {
+    "name": "LUKOIL",
+    "lat": 40.05266,
+    "lng": -75.00753,
+    "id": "110001044931"
+  },
+  {
+    "name": "NEW CLASSIC CLEANERS",
+    "lat": 40.105645,
+    "lng": -75.034148,
+    "id": "110001048063"
+  },
+  {
+    "name": "H S CLEANER",
+    "lat": 40.0735,
+    "lng": -75.166936,
+    "id": "110001048330"
+  },
+  {
+    "name": "CROWN CLEANERS & DRYERS",
+    "lat": 40.044991,
+    "lng": -75.231257,
+    "id": "110001048731"
+  },
+  {
+    "name": "TARGET CLEANER'S_INC",
+    "lat": 40.009964,
+    "lng": -75.151065,
+    "id": "110001048973"
+  },
+  {
+    "name": "HENRY'S CLEANERS",
+    "lat": 39.95621,
+    "lng": -75.20679,
+    "id": "110001049623"
+  },
+  {
+    "name": "ALMAR FRENCH CLEANERS",
+    "lat": 40.07052,
+    "lng": -75.15734,
+    "id": "110001051101"
+  },
+  {
+    "name": "ALMAR FRENCH CLEANERS",
+    "lat": 40.07052,
+    "lng": -75.15734,
+    "id": "110001051101"
+  },
+  {
+    "name": "AWARDS CLEANERS",
+    "lat": 40.02743,
+    "lng": -75.20968,
+    "id": "110001052618"
+  },
+  {
+    "name": "RITTENHOUSE CLEANERS",
+    "lat": 39.94619,
+    "lng": -75.17011,
+    "id": "110001052645"
+  },
+  {
+    "name": "YE OLD CLEAN'RY",
+    "lat": 39.95265,
+    "lng": -75.17173,
+    "id": "110001052903"
+  },
+  {
+    "name": "STANTON CLEANERS",
+    "lat": 40.02753,
+    "lng": -75.21656,
+    "id": "110001053387"
+  },
+  {
+    "name": "JWS DELAVAU CO",
+    "lat": 39.984217,
+    "lng": -75.14408,
+    "id": "110001053564"
+  },
+  {
+    "name": "CONSOLIDATED DRAKE PRESS",
+    "lat": 39.9802,
+    "lng": -75.21991,
+    "id": "110001053984"
+  },
+  {
+    "name": "AL FRESCO CLEANERS",
+    "lat": 40.00847,
+    "lng": -75.14669,
+    "id": "110001054019"
+  },
+  {
+    "name": "DANNY'S CLEANER",
+    "lat": 39.98623,
+    "lng": -75.23198,
+    "id": "110001054082"
+  },
+  {
+    "name": "OK CLEANERS",
+    "lat": 39.97774,
+    "lng": -75.26631,
+    "id": "110001063919"
+  },
+  {
+    "name": "STENTON CLEANERS",
+    "lat": 40.06018,
+    "lng": -75.16653,
+    "id": "110001066015"
+  },
+  {
+    "name": "MARTINS CLEANERS",
+    "lat": 40.06399,
+    "lng": -75.15307,
+    "id": "110001066024"
+  },
+  {
+    "name": "CHELTEN CLEANERS",
+    "lat": 40.0303,
+    "lng": -75.18039,
+    "id": "110001067639"
+  },
+  {
+    "name": "BRIGHT SUN CLEANERS",
+    "lat": 39.99256,
+    "lng": -75.13055,
+    "id": "110001067648"
+  },
+  {
+    "name": "US BANKNOTE CORP",
+    "lat": 40.09702,
+    "lng": -75.00491,
+    "id": "110001069673"
+  },
+  {
+    "name": "AMERICAN CLEANERS",
+    "lat": 39.98363,
+    "lng": -75.13557,
+    "id": "110001070527"
+  },
+  {
+    "name": "JAE'S CLEANERS",
+    "lat": 40.02337,
+    "lng": -75.04828,
+    "id": "110001070625"
+  },
+  {
+    "name": "60 MINUTE CLEANERS",
+    "lat": 40.02552,
+    "lng": -75.14287,
+    "id": "110001070634"
+  },
+  {
+    "name": "WHITE SEAL CLEANERS",
+    "lat": 39.94816,
+    "lng": -75.22156,
+    "id": "110001072026"
+  },
+  {
+    "name": "SHELMIRE CLEANERS",
+    "lat": 40.03834,
+    "lng": -75.03667,
+    "id": "110001072393"
+  },
+  {
+    "name": "PRIDE CLEANING LAUNDRY VILLAGE",
+    "lat": 40.08079,
+    "lng": -75.17231,
+    "id": "110001078280"
+  },
+  {
+    "name": "JAMES CLEANERS",
+    "lat": 39.99632,
+    "lng": -75.17288,
+    "id": "110001087813"
+  },
+  {
+    "name": "NIGRO INC",
+    "lat": 39.93667,
+    "lng": -75.15954,
+    "id": "110001088055"
+  },
+  {
+    "name": "SIMKAR LIGHTING CO.",
+    "lat": 40.01845,
+    "lng": -75.13719,
+    "id": "110001088073"
+  },
+  {
+    "name": "BAMBI ONE HOUR CLEANERS",
+    "lat": 39.92016,
+    "lng": -75.17061,
+    "id": "110001092950"
+  },
+  {
+    "name": "BAMBI ONE HOUR CLEANERS",
+    "lat": 39.92016,
+    "lng": -75.17061,
+    "id": "110001092950"
+  },
+  {
+    "name": "PHILA SCHOOL DISTRICT_- NORTHEAST HIGH",
+    "lat": 40.055342,
+    "lng": -75.073238,
+    "id": "110001114277"
+  },
+  {
+    "name": "BUSTLETON DRY CLEANERS",
+    "lat": 40.110823,
+    "lng": -75.024533,
+    "id": "110001127058"
+  },
+  {
+    "name": "ETKINS ONE HOUR CLEANER",
+    "lat": 40.02833,
+    "lng": -75.14704,
+    "id": "110001139349"
+  },
+  {
+    "name": "FRANKFORD CLEANERS",
+    "lat": 40.086714,
+    "lng": -74.971704,
+    "id": "110001139848"
+  },
+  {
+    "name": "SWAN ONE HOUR CLEANER",
+    "lat": 40.03254,
+    "lng": -75.10626,
+    "id": "110001142291"
+  },
+  {
+    "name": "ROIS MFG CO.",
+    "lat": 39.9742,
+    "lng": -75.13196,
+    "id": "110001202877"
+  },
+  {
+    "name": "CONNELLY CONTAINERS",
+    "lat": 40.02567,
+    "lng": -75.22418,
+    "id": "110001203144"
+  },
+  {
+    "name": "PA COLLEGE OF OPTMTY",
+    "lat": 40.04708,
+    "lng": -75.13951,
+    "id": "110001203340"
+  },
+  {
+    "name": "CONOCO FUELS",
+    "lat": 39.914643837544,
+    "lng": -75.1540285480784,
+    "id": "110001203439"
+  },
+  {
+    "name": "SAM'S JUNK CO",
+    "lat": 39.973899,
+    "lng": -75.218219,
+    "id": "110001205605"
+  },
+  {
+    "name": "PHILADELPHIA APPLIANCE RECYCLING",
+    "lat": 40.006398,
+    "lng": -75.11694,
+    "id": "110001205614"
+  },
+  {
+    "name": "NICHOLAS SCRAP METAL INC",
+    "lat": 39.987203,
+    "lng": -75.120431,
+    "id": "110001205623"
+  },
+  {
+    "name": "SIMON'S GETTY",
+    "lat": 40.056309,
+    "lng": -75.047521,
+    "id": "110001206178"
+  },
+  {
+    "name": "2601 APARTMENTS",
+    "lat": 39.96855,
+    "lng": -75.18092,
+    "id": "110001208407"
+  },
+  {
+    "name": "CITY OF PHILA 88360",
+    "lat": 40.00013,
+    "lng": -75.17791,
+    "id": "110001208602"
+  },
+  {
+    "name": "NATIONAL PUBLISHING CO",
+    "lat": 39.95001,
+    "lng": -75.17977,
+    "id": "110001209068"
+  },
+  {
+    "name": "GERMANTOWN HOME",
+    "lat": 40.05612,
+    "lng": -75.18763,
+    "id": "110001209692"
+  },
+  {
+    "name": "GRYPHIN CO",
+    "lat": 39.98686,
+    "lng": -75.09397,
+    "id": "110001209923"
+  },
+  {
+    "name": "PREMIER CONCRETE",
+    "lat": 40.02369,
+    "lng": -75.2359,
+    "id": "110001209969"
+  },
+  {
+    "name": "SHAW'S AUTO PARTS",
+    "lat": 40.008468,
+    "lng": -75.075177,
+    "id": "110001210626"
+  },
+  {
+    "name": "BUNNY CLEANERS",
+    "lat": 39.92209,
+    "lng": -75.15107,
+    "id": "110001210984"
+  },
+  {
+    "name": "BUNNY CLEANERS",
+    "lat": 39.92209,
+    "lng": -75.15107,
+    "id": "110001210984"
+  },
+  {
+    "name": "SAM'S CLEANERS & DYERS",
+    "lat": 39.93128,
+    "lng": -75.17475,
+    "id": "110001210993"
+  },
+  {
+    "name": "RON'S ONE HOUR CLEANERS",
+    "lat": 39.9364,
+    "lng": -75.17527,
+    "id": "110001211000"
+  },
+  {
+    "name": "RON'S ONE HOUR CLEANER",
+    "lat": 39.9364,
+    "lng": -75.17527,
+    "id": "110001211000"
+  },
+  {
+    "name": "CHOI'S BETTER CLEANERS",
+    "lat": 40.05704,
+    "lng": -75.14937,
+    "id": "110001211019"
+  },
+  {
+    "name": "CHOI'S BETTER CLEANERS",
+    "lat": 40.05704,
+    "lng": -75.14937,
+    "id": "110001211019"
+  },
+  {
+    "name": "NOVICK CLEANERS",
+    "lat": 40.05459,
+    "lng": -75.12517,
+    "id": "110001211028"
+  },
+  {
+    "name": "NOVICK CLEANERS",
+    "lat": 40.05459,
+    "lng": -75.12517,
+    "id": "110001211028"
+  },
+  {
+    "name": "CONRAIL/S PHILA MATERIAL BULKYARD",
+    "lat": 39.941069,
+    "lng": -75.144792,
+    "id": "110001211475"
+  },
+  {
+    "name": "CHATHAM APTS",
+    "lat": 39.9508,
+    "lng": -75.17374,
+    "id": "110001211493"
+  },
+  {
+    "name": "MICHAEL'S CLEANERS",
+    "lat": 39.93687,
+    "lng": -75.16698,
+    "id": "110001212152"
+  },
+  {
+    "name": "IVY HILL CLEANERS",
+    "lat": 40.08241,
+    "lng": -75.17258,
+    "id": "110001212161"
+  },
+  {
+    "name": "PACKS CLEANERS & CO",
+    "lat": 40.079575,
+    "lng": -75.173483,
+    "id": "110001212170"
+  },
+  {
+    "name": "PACK'S CLEANERS",
+    "lat": 40.079575,
+    "lng": -75.173483,
+    "id": "110001212170"
+  },
+  {
+    "name": "COLONIAL BEEF COMPANY",
+    "lat": 39.90465,
+    "lng": -75.15435,
+    "id": "110001213008"
+  },
+  {
+    "name": "BROOKS PROVISIONS INC",
+    "lat": 39.90447,
+    "lng": -75.15181,
+    "id": "110001213017"
+  },
+  {
+    "name": "GOOD HUMOR CORPORATION",
+    "lat": 39.94547,
+    "lng": -75.20859,
+    "id": "110001213026"
+  },
+  {
+    "name": "SEPTA - CALLOWHILL BUS DEPOT",
+    "lat": 39.967127,
+    "lng": -75.237646,
+    "id": "110001213437"
+  },
+  {
+    "name": "HOLMESBURG PRISON",
+    "lat": 40.037592,
+    "lng": -75.020705,
+    "id": "110001214418"
+  },
+  {
+    "name": "FRANKFORD CANDY CO",
+    "lat": 39.93927,
+    "lng": -75.17823,
+    "id": "110001218183"
+  },
+  {
+    "name": "BLUE CROSS TOWERS",
+    "lat": 39.83047,
+    "lng": -75.42392,
+    "id": "110001218566"
+  },
+  {
+    "name": "ALEXANDER WOODWORK",
+    "lat": 39.96929,
+    "lng": -75.16249,
+    "id": "110001219967"
+  },
+  {
+    "name": "A H VOIGT INC",
+    "lat": 39.99798,
+    "lng": -75.15701,
+    "id": "110001220081"
+  },
+  {
+    "name": "KIESLING-HESS",
+    "lat": 40.01628,
+    "lng": -75.13214,
+    "id": "110001221071"
+  },
+  {
+    "name": "JER-MAR METAL CO",
+    "lat": 39.93863,
+    "lng": -75.17296,
+    "id": "110001221874"
+  },
+  {
+    "name": "NORMAN APPLIANCES",
+    "lat": 39.9919,
+    "lng": -75.12172,
+    "id": "110001221883"
+  },
+  {
+    "name": "MARTIN METAL SPECIALTIES",
+    "lat": 40.02616,
+    "lng": -75.03087,
+    "id": "110001222258"
+  },
+  {
+    "name": "RIVER PARK HOUSE ASSOCIATES",
+    "lat": 40.00417,
+    "lng": -75.20252,
+    "id": "110001222338"
+  },
+  {
+    "name": "ACRAC ICE INC",
+    "lat": 39.98612,
+    "lng": -75.23463,
+    "id": "110001222677"
+  },
+  {
+    "name": "DELAWARE AVE COLD STORAGE",
+    "lat": 39.919234,
+    "lng": -75.140388,
+    "id": "110001222686"
+  },
+  {
+    "name": "PHILA SCHOOL DISTRICT_- WASHINGTON HGH",
+    "lat": 40.113664,
+    "lng": -75.022544,
+    "id": "110001224657"
+  },
+  {
+    "name": "PHILA THERM - WILLOW",
+    "lat": 39.95897,
+    "lng": -75.1535,
+    "id": "110002064685"
+  },
+  {
+    "name": "ABRAMS METAL CO",
+    "lat": 39.93241,
+    "lng": -75.22459,
+    "id": "110002065906"
+  },
+  {
+    "name": "WAYNE CLEANERS",
+    "lat": 40.02542,
+    "lng": -75.1677,
+    "id": "110002450259"
+  },
+  {
+    "name": "C&K CLEANERS",
+    "lat": 40.03526,
+    "lng": -75.04379,
+    "id": "110004825011"
+  },
+  {
+    "name": "T&I CLEANERS",
+    "lat": 39.92385,
+    "lng": -75.15797,
+    "id": "110004825262"
+  },
+  {
+    "name": "BELL CLEANERS",
+    "lat": 39.966225,
+    "lng": -75.217467,
+    "id": "110004834341"
+  },
+  {
+    "name": "RIMS CLEANERS",
+    "lat": 39.9453,
+    "lng": -75.17876,
+    "id": "110004836964"
+  },
+  {
+    "name": "SUBURBAN ONE HOUR CLEANER",
+    "lat": 40.04779,
+    "lng": -75.15097,
+    "id": "110004838604"
+  },
+  {
+    "name": "SUBURBAN ONE HOUR CLEANERS",
+    "lat": 40.04779,
+    "lng": -75.15097,
+    "id": "110004838604"
+  },
+  {
+    "name": "COLONIAL CLEANER",
+    "lat": 39.99182,
+    "lng": -75.11268,
+    "id": "110004839177"
+  },
+  {
+    "name": "HOUR GLASS CLEANERS",
+    "lat": 40.059103,
+    "lng": -75.164704,
+    "id": "110004839630"
+  },
+  {
+    "name": "PARK N CLEAN INC.",
+    "lat": 40.034917,
+    "lng": -75.069867,
+    "id": "110004840389"
+  },
+  {
+    "name": "BETTY BRITE ONE HOUR",
+    "lat": 40.06369,
+    "lng": -74.984931,
+    "id": "110004840691"
+  },
+  {
+    "name": "LAVEROCK CLEANERS",
+    "lat": 40.02544,
+    "lng": -75.08472,
+    "id": "110004848201"
+  },
+  {
+    "name": "GILWAY CLEANERS",
+    "lat": 40.05779,
+    "lng": -75.01501,
+    "id": "110004848700"
+  },
+  {
+    "name": "ROSE ONE HOUR CLEANER",
+    "lat": 39.93887,
+    "lng": -75.22405,
+    "id": "110004848755"
+  },
+  {
+    "name": "PARKSIDE CLEANERS",
+    "lat": 39.97389,
+    "lng": -75.20621,
+    "id": "110004851107"
+  },
+  {
+    "name": "SUNRISE CLEANERS",
+    "lat": 40.03377,
+    "lng": -75.21554,
+    "id": "110004851303"
+  },
+  {
+    "name": "QUAKER CITY DRY CLEANERS",
+    "lat": 39.97808,
+    "lng": -75.26689,
+    "id": "110004851526"
+  },
+  {
+    "name": "ADAM'S FABRICARE CLEANERS",
+    "lat": 40.059557,
+    "lng": -75.044409,
+    "id": "110004851544"
+  },
+  {
+    "name": "DAISY CLEANERS",
+    "lat": 40.092787,
+    "lng": -75.031713,
+    "id": "110004851571"
+  },
+  {
+    "name": "SAM'S CLEANERS",
+    "lat": 39.93137,
+    "lng": -75.17473,
+    "id": "110004851633"
+  },
+  {
+    "name": "NU JAYLON CLNR",
+    "lat": 39.99209,
+    "lng": -75.18579,
+    "id": "110004851857"
+  },
+  {
+    "name": "PAULS 1 HR DRY CLEANERS",
+    "lat": 39.98428,
+    "lng": -75.23134,
+    "id": "110004851866"
+  },
+  {
+    "name": "GALLELLI TAILORS",
+    "lat": 40.055306,
+    "lng": -75.131903,
+    "id": "110004852277"
+  },
+  {
+    "name": "HOLIDAY CLEANERS",
+    "lat": 40.038169,
+    "lng": -75.222829,
+    "id": "110004852419"
+  },
+  {
+    "name": "VIP CLEANERS",
+    "lat": 39.96927,
+    "lng": -75.24538,
+    "id": "110004853187"
+  },
+  {
+    "name": "BEST CLEANERS",
+    "lat": 39.9522,
+    "lng": -75.24279,
+    "id": "110004853793"
+  },
+  {
+    "name": "SEPTA - GERMANTOWN BRAKE SHOP",
+    "lat": 40.05306,
+    "lng": -75.186,
+    "id": "110004854239"
+  },
+  {
+    "name": "SUNNY CLEANERS",
+    "lat": 39.92256,
+    "lng": -75.15665,
+    "id": "110004856031"
+  },
+  {
+    "name": "LEE'S CLEANERS",
+    "lat": 39.9912,
+    "lng": -75.14836,
+    "id": "110004856567"
+  },
+  {
+    "name": "KWIKLEEN",
+    "lat": 39.92869,
+    "lng": -75.2299,
+    "id": "110004858869"
+  },
+  {
+    "name": "BONLYNN CLEANERS",
+    "lat": 40.0764,
+    "lng": -75.20707,
+    "id": "110004862881"
+  },
+  {
+    "name": "FRANKFORD CLEANERS",
+    "lat": 40.0579,
+    "lng": -75.01519,
+    "id": "110004870863"
+  },
+  {
+    "name": "DELAWARE VALLEY RECYCLING",
+    "lat": 39.92192,
+    "lng": -75.21748,
+    "id": "110004871559"
+  },
+  {
+    "name": "FELIX CLEANER",
+    "lat": 39.960948,
+    "lng": -75.144266,
+    "id": "110004871906"
+  },
+  {
+    "name": "AMERICAN BAG & PAPER CORP",
+    "lat": 40.07414,
+    "lng": -75.01676,
+    "id": "110005975686"
+  },
+  {
+    "name": "SPC PENROSE AVE FAC",
+    "lat": 39.905313,
+    "lng": -75.193724,
+    "id": "110006522192"
+  },
+  {
+    "name": "EDWARD E GOLDBERG & SONS",
+    "lat": 39.98124,
+    "lng": -75.09298,
+    "id": "110006623653"
+  },
+  {
+    "name": "JAMES ABBOTT INC",
+    "lat": 39.991757,
+    "lng": -75.110202,
+    "id": "110006820841"
+  },
+  {
+    "name": "NU-WAY DISCOUNT CLEANERS",
+    "lat": 39.92349,
+    "lng": -75.18048,
+    "id": "110006821047"
+  },
+  {
+    "name": "NU-WAY CLEANERS",
+    "lat": 39.92349,
+    "lng": -75.18048,
+    "id": "110006821047"
+  },
+  {
+    "name": "NATIONAL REFRIGERANT",
+    "lat": 40.09875,
+    "lng": -75.00984,
+    "id": "110006821065"
+  },
+  {
+    "name": "ORIANNA COMM TRUCK CO",
+    "lat": 40.04258,
+    "lng": -75.00046,
+    "id": "110006821136"
+  },
+  {
+    "name": "QUAKER VALLEY MEATS",
+    "lat": 39.9068,
+    "lng": -75.15389,
+    "id": "110006821207"
+  },
+  {
+    "name": "FR JUDGE R C H S",
+    "lat": 40.0444824444102,
+    "lng": -75.0232712549638,
+    "id": "110007213489"
+  },
+  {
+    "name": "SEPTA - ALLEGHENY BUS DEPOT",
+    "lat": 40.00411,
+    "lng": -75.17226,
+    "id": "110007214889"
+  },
+  {
+    "name": "NORTH WEST INCINERATOR",
+    "lat": 40.03853,
+    "lng": -75.24007,
+    "id": "110007219367"
+  },
+  {
+    "name": "CHELTENHAM ONE HOUR CUSTOM CLEANERS",
+    "lat": 40.0564475096457,
+    "lng": -75.1384870175611,
+    "id": "110007222282"
+  },
+  {
+    "name": "SEPTA - POWELTON AVE RR YARD",
+    "lat": 39.95547,
+    "lng": -75.18827,
+    "id": "110007222647"
+  },
+  {
+    "name": "ST. MARIA GORETTI RCHS",
+    "lat": 39.92714,
+    "lng": -75.16206,
+    "id": "110007770812"
+  },
+  {
+    "name": "CAROUSEL CLEANERS",
+    "lat": 40.02618,
+    "lng": -75.04283,
+    "id": "110007792674"
+  },
+  {
+    "name": "PECO FARMS INC, PHILADELPHIA FEED MILL",
+    "lat": 32.805606,
+    "lng": -89.120074,
+    "id": "110008497091"
+  },
+  {
+    "name": "MORRIS IRON AND STEEL CO INC",
+    "lat": 40.02488,
+    "lng": -75.02797,
+    "id": "110009159524"
+  },
+  {
+    "name": "SUNOCO GAS STATION",
+    "lat": 39.98299,
+    "lng": -75.10141,
+    "id": "110010285039"
+  },
+  {
+    "name": "SPECIALTY REFRIGERATION SERVICE",
+    "lat": 39.90768,
+    "lng": -75.1553,
+    "id": "110010716859"
+  },
+  {
+    "name": "ATOCHEM INC",
+    "lat": 39.96785,
+    "lng": -75.35674,
+    "id": "110011616233"
+  },
+  {
+    "name": "SISTERS OF ST JOSEPH & CHESTNUT HILL COL",
+    "lat": 40.08525,
+    "lng": -75.22926,
+    "id": "110012162827"
+  },
+  {
+    "name": "NOBLE CLEANERS",
+    "lat": 40.13412,
+    "lng": -75.00938,
+    "id": "110012162907"
+  },
+  {
+    "name": "FRIENDS CLEANERS",
+    "lat": 39.9726,
+    "lng": -75.25428,
+    "id": "110012162943"
+  },
+  {
+    "name": "CASTOR DRY CLEANERS",
+    "lat": 40.06143,
+    "lng": -75.05639,
+    "id": "110012162989"
+  },
+  {
+    "name": "PHILA. HOUSING AUTHORITY-RAYMOND ROSEN",
+    "lat": 39.987339,
+    "lng": -75.170819,
+    "id": "110012172308"
+  },
+  {
+    "name": "GROSS METALS",
+    "lat": 40.00452,
+    "lng": -75.13312,
+    "id": "110012172326"
+  },
+  {
+    "name": "819 CLEANER'S",
+    "lat": 39.92666,
+    "lng": -75.17841,
+    "id": "110013668664"
+  },
+  {
+    "name": "MR. PARK ANTON CRY CLEANERS",
+    "lat": 39.979564,
+    "lng": -75.268767,
+    "id": "110013668682"
+  },
+  {
+    "name": "P&J ONE HOUR CLEANERS",
+    "lat": 40.03911,
+    "lng": -75.03456,
+    "id": "110013668771"
+  },
+  {
+    "name": "PELHAM PLAZA CLEANERS",
+    "lat": 40.043071,
+    "lng": -75.190681,
+    "id": "110013668799"
+  },
+  {
+    "name": "RIFF TAILORING",
+    "lat": 39.94448,
+    "lng": -75.15024,
+    "id": "110013668824"
+  },
+  {
+    "name": "TOPPER ONE HOUR CLEANER",
+    "lat": 39.98702,
+    "lng": -75.16183,
+    "id": "110013669315"
+  },
+  {
+    "name": "AMERICAN VALET SERVICE",
+    "lat": 40.0501,
+    "lng": -75.18438,
+    "id": "110013669459"
+  },
+  {
+    "name": "CHELTENHAM CLEANERS",
+    "lat": 40.055245,
+    "lng": -75.125902,
+    "id": "110013669495"
+  },
+  {
+    "name": "FIDELITY ONE HOUR CLEANER",
+    "lat": 40.05487,
+    "lng": -75.07242,
+    "id": "110013669994"
+  },
+  {
+    "name": "FIDELITY CLEANERS",
+    "lat": 40.05487,
+    "lng": -75.07242,
+    "id": "110013669994"
+  },
+  {
+    "name": "SEOUL'S CLEANERS",
+    "lat": 40.087626,
+    "lng": -75.044828,
+    "id": "110013671204"
+  },
+  {
+    "name": "STELLA'S ONE HOUR CLEANERS",
+    "lat": 39.99702,
+    "lng": -75.11243,
+    "id": "110013671240"
+  },
+  {
+    "name": "FOX CLEANERS",
+    "lat": 39.91338,
+    "lng": -75.24281,
+    "id": "110013671375"
+  },
+  {
+    "name": "FREEMAN CLEANERS INC",
+    "lat": 40.11201,
+    "lng": -75.01556,
+    "id": "110013671393"
+  },
+  {
+    "name": "NEW SPRING CLEANERS",
+    "lat": 40.070897,
+    "lng": -75.200922,
+    "id": "110013671455"
+  },
+  {
+    "name": "BROAD STREET CLEANERS",
+    "lat": 39.93059,
+    "lng": -75.16832,
+    "id": "110013671482"
+  },
+  {
+    "name": "GEM CLEANERS",
+    "lat": 40.04662,
+    "lng": -75.1956,
+    "id": "110013671623"
+  },
+  {
+    "name": "LINN-1 HOUR CLEANERS",
+    "lat": 39.92445,
+    "lng": -75.1714,
+    "id": "110013671730"
+  },
+  {
+    "name": "LINN 1 HR CLEANERS",
+    "lat": 39.92445,
+    "lng": -75.1714,
+    "id": "110013671730"
+  },
+  {
+    "name": "1501 PROGRESS CLEANERS",
+    "lat": 39.97657,
+    "lng": -75.15832,
+    "id": "110013671767"
+  },
+  {
+    "name": "NELSON CLEANERS",
+    "lat": 40.00975,
+    "lng": -75.10691,
+    "id": "110013671810"
+  },
+  {
+    "name": "NEW HOLLYWOOD CLEANERS",
+    "lat": 39.99791,
+    "lng": -75.16709,
+    "id": "110013671865"
+  },
+  {
+    "name": "THE KLEENERS",
+    "lat": 40.034838,
+    "lng": -75.5738,
+    "id": "110013672490"
+  },
+  {
+    "name": "VILLAGE CLEANERS",
+    "lat": 39.96038,
+    "lng": -75.18931,
+    "id": "110013672515"
+  },
+  {
+    "name": "WAYNE JUNCTION DRY CLEANERS",
+    "lat": 40.02303,
+    "lng": -75.15801,
+    "id": "110013672524"
+  },
+  {
+    "name": "JOHN'S ONE HOUR DRY CLEANERS",
+    "lat": 39.95109,
+    "lng": -75.24303,
+    "id": "110013673051"
+  },
+  {
+    "name": "JOHN'S ONE HOUR CLEANERS",
+    "lat": 39.95109,
+    "lng": -75.24303,
+    "id": "110013673051"
+  },
+  {
+    "name": "SUNNY DRY CLEANERS",
+    "lat": 40.00434,
+    "lng": -75.17416,
+    "id": "110013673177"
+  },
+  {
+    "name": "KREWSTOWN CLEANERS",
+    "lat": 40.085785,
+    "lng": -75.04655,
+    "id": "110013673275"
+  },
+  {
+    "name": "BETTY BRITE ONE HOUR CLEANER",
+    "lat": 40.080739,
+    "lng": -74.993249,
+    "id": "110013674096"
+  },
+  {
+    "name": "FASHION EXPERT DRY CLEANERS",
+    "lat": 40.00256,
+    "lng": -75.21487,
+    "id": "110013674489"
+  },
+  {
+    "name": "SUDDEN SERVICES INC,DISTRIBUTION & OPER.",
+    "lat": 32.800572,
+    "lng": -89.118611,
+    "id": "110016772599"
+  },
+  {
+    "name": "HARDY MANUFACTURING CO, INC",
+    "lat": 32.648336,
+    "lng": -89.066414,
+    "id": "110016773543"
+  },
+  {
+    "name": "GREYHOUND LINES",
+    "lat": 39.961023,
+    "lng": -75.137003,
+    "id": "110017625738"
+  },
+  {
+    "name": "S D RICHMAN SONS INC",
+    "lat": 39.996532,
+    "lng": -75.088976,
+    "id": "110017824112"
+  },
+  {
+    "name": "ADAM'S FABRICARE CLEANERS",
+    "lat": 39.96226,
+    "lng": -75.17127,
+    "id": "110017843280"
+  },
+  {
+    "name": "DORAL DRY CLEANERS",
+    "lat": 40.070615,
+    "lng": -75.03165,
+    "id": "110017843379"
+  },
+  {
+    "name": "FLASH ONE HOUR CLEANERS",
+    "lat": 39.9554,
+    "lng": -75.24213,
+    "id": "110017843388"
+  },
+  {
+    "name": "FRIENDLY ONE HOUR CLEANERS",
+    "lat": 40.07635,
+    "lng": -75.08571,
+    "id": "110017843397"
+  },
+  {
+    "name": "J & J FIRST COUNTY CLEANERS",
+    "lat": 40.067503,
+    "lng": -75.068557,
+    "id": "110017843404"
+  },
+  {
+    "name": "FLAIR CLEANERS",
+    "lat": 40.04451,
+    "lng": -75.16323,
+    "id": "110017843681"
+  },
+  {
+    "name": "ONE HOUR CLEANERS",
+    "lat": 40.03476,
+    "lng": -75.17577,
+    "id": "110017843707"
+  },
+  {
+    "name": "LOVE & CARE CLEANERS",
+    "lat": 40.03908,
+    "lng": -75.0778,
+    "id": "110017843716"
+  },
+  {
+    "name": "MT AIRY ONE HOUR CLEANERS",
+    "lat": 40.06043,
+    "lng": -75.19123,
+    "id": "110017843725"
+  },
+  {
+    "name": "PAYLESS CLEANERS",
+    "lat": 40.13377,
+    "lng": -75.00986,
+    "id": "110017843734"
+  },
+  {
+    "name": "RAYS DRY CLEANERS",
+    "lat": 39.93613,
+    "lng": -75.17047,
+    "id": "110017843743"
+  },
+  {
+    "name": "PAYLESS CLEANERS",
+    "lat": 39.914545,
+    "lng": -75.153624,
+    "id": "110017843770"
+  },
+  {
+    "name": "BIG SAVE CLEANERS",
+    "lat": 39.99658,
+    "lng": -75.09091,
+    "id": "110018863933"
+  },
+  {
+    "name": "DO WELL CLEANERS",
+    "lat": 39.98448,
+    "lng": -75.14212,
+    "id": "110018863942"
+  },
+  {
+    "name": "A & M CLEANERS",
+    "lat": 39.95375,
+    "lng": -75.21926,
+    "id": "110020497746"
+  },
+  {
+    "name": "ADAMS RUN DRY CLEANERS",
+    "lat": 40.04529,
+    "lng": -75.11927,
+    "id": "110020497755"
+  },
+  {
+    "name": "FITZGERALD CLEANERS",
+    "lat": 39.95794,
+    "lng": -75.23354,
+    "id": "110020497764"
+  },
+  {
+    "name": "CHRIS'S CLEANERS",
+    "lat": 39.9719,
+    "lng": -75.22597,
+    "id": "110020497773"
+  },
+  {
+    "name": "LEE'S CLEANERS",
+    "lat": 39.97571,
+    "lng": -75.2422,
+    "id": "110020497782"
+  },
+  {
+    "name": "MLJ INDUSTRIES T/A PAWS TO HEAVEN",
+    "lat": 40.00867,
+    "lng": -75.06844,
+    "id": "110020497791"
+  },
+  {
+    "name": "CINDERELLA CLEANERS",
+    "lat": 39.9998,
+    "lng": -75.14054,
+    "id": "110020582029"
+  },
+  {
+    "name": "ROTO-DIE COMPANY INC/ROTOMETRICS",
+    "lat": 40.10006,
+    "lng": -74.99646,
+    "id": "110020994496"
+  },
+  {
+    "name": "CLASSIC CLEANERS",
+    "lat": 40.04922,
+    "lng": -74.98901,
+    "id": "110021037279"
+  },
+  {
+    "name": "PEARL PRESSMAN LIBERTY INC/SUFFOLK AVE",
+    "lat": 39.90178,
+    "lng": -75.23804,
+    "id": "110022396101"
+  },
+  {
+    "name": "BOB'S PLACE CLEANERS",
+    "lat": 39.941429,
+    "lng": -75.147203,
+    "id": "110022793707"
+  },
+  {
+    "name": "LY'S CLEANERS",
+    "lat": 40.04537,
+    "lng": -75.07173,
+    "id": "110022797062"
+  },
+  {
+    "name": "J-BRITE CLEANERS",
+    "lat": 39.94143,
+    "lng": -75.15086,
+    "id": "110022798114"
+  },
+  {
+    "name": "J-BRITE CLEANERS",
+    "lat": 39.94143,
+    "lng": -75.15086,
+    "id": "110022798114"
+  },
+  {
+    "name": "LEO'S CLEANERS",
+    "lat": 40.072382,
+    "lng": -75.076404,
+    "id": "110028009394"
+  },
+  {
+    "name": "FISHTOWN CLEANERS",
+    "lat": 39.97195,
+    "lng": -75.1254,
+    "id": "110028009401"
+  },
+  {
+    "name": "HELLEN'S CLEANERS",
+    "lat": 39.94485,
+    "lng": -75.17515,
+    "id": "110028009410"
+  },
+  {
+    "name": "SAVAGE SERVICE CORP",
+    "lat": 39.913824,
+    "lng": -75.1365,
+    "id": "110028011023"
+  },
+  {
+    "name": "INNOVATION PRINTING & COMM/PHILA",
+    "lat": 40.09698,
+    "lng": -75.00497,
+    "id": "110028052951"
+  },
+  {
+    "name": "VA MEDICAL CENTER",
+    "lat": 39.94983,
+    "lng": -75.20117,
+    "id": "110030479756"
+  },
+  {
+    "name": "THOMAS JEFFERSON UNV",
+    "lat": 39.82212,
+    "lng": -75.41052,
+    "id": "110038444537"
+  },
+  {
+    "name": "FESMIRE HAULING",
+    "lat": 40.013987,
+    "lng": -75.05607,
+    "id": "110040631313"
+  },
+  {
+    "name": "HP HOOD PENN MAID/PHILA",
+    "lat": 40.09053,
+    "lng": -74.98815,
+    "id": "110040833818"
+  },
+  {
+    "name": "MATERIALS PROCESSING CORPORATION",
+    "lat": 40.08847,
+    "lng": -74.99717,
+    "id": "110042397643"
+  },
+  {
+    "name": "MCI INC (VERIZON BUSINESS)",
+    "lat": 39.95958,
+    "lng": -75.16205,
+    "id": "110043976310"
+  },
+  {
+    "name": "VERIZON CHESTNUT HILL",
+    "lat": 40.07473,
+    "lng": -75.20427,
+    "id": "110044317557"
+  },
+  {
+    "name": "VERIZON NEPTUNE CENTRAL OFFICE",
+    "lat": 40.07829,
+    "lng": -74.97824,
+    "id": "110044317566"
+  },
+  {
+    "name": "VERIZON ORCHARD CENTRAL",
+    "lat": 40.08509,
+    "lng": -75.02568,
+    "id": "110044317575"
+  },
+  {
+    "name": "LIBERTY GAS STATION",
+    "lat": 39.96994,
+    "lng": -75.12497,
+    "id": "110044321383"
+  },
+  {
+    "name": "SEPTA - ROBERTS AVE RR YARD",
+    "lat": 40.10784,
+    "lng": -75.15189,
+    "id": "110055617275"
+  },
+  {
+    "name": "ALL-BRITE METAL FINISHING INC",
+    "lat": 39.98407,
+    "lng": -75.1216,
+    "id": "110057830389"
+  },
+  {
+    "name": "PREMIER MEDICAL ",
+    "lat": 40.11376,
+    "lng": -75.03513,
+    "id": "110059345052"
+  },
+  {
+    "name": "BOBBY SCHORR",
+    "lat": 39.9426,
+    "lng": -75.145493,
+    "id": "110059933559"
+  },
+  {
+    "name": "VERIZON SHERWOOD",
+    "lat": 39.959692,
+    "lng": -75.234815,
+    "id": "110063619838"
+  },
+  {
+    "name": "SEPTA",
+    "lat": 39.822291,
+    "lng": -75.41907,
+    "id": "110064198826"
+  },
+  {
+    "name": "EMERALD ONE HOUR CLEANER",
+    "lat": 40.05393,
+    "lng": -75.15521,
+    "id": "110064329123"
+  },
+  {
+    "name": "XO COMMUNICATIONS ",
+    "lat": 39.95995,
+    "lng": -75.16196,
+    "id": "110064433153"
+  },
+  {
+    "name": "VERIZON PILGRIM CENTRAL ",
+    "lat": 40.06065,
+    "lng": -75.08468,
+    "id": "110064433162"
+  },
+  {
+    "name": "RHOADS MARINE INDUSTRIES",
+    "lat": 39.8924701109078,
+    "lng": -75.1767766744034,
+    "id": "110064433206"
+  },
+  {
+    "name": "VERIZON POPLAR CENTRAL",
+    "lat": 39.97627,
+    "lng": -75.16175,
+    "id": "110064433689"
+  },
+  {
+    "name": "MARSHALLS NE DISTRIBUTION CENTER",
+    "lat": 40.09156,
+    "lng": -75.01143,
+    "id": "110067533903"
+  },
+  {
+    "name": "PENN POWER GROUP",
+    "lat": 40.03438,
+    "lng": -75.01614,
+    "id": "110069329569"
+  },
+  {
+    "name": "JC CLEANERS",
+    "lat": 40.01926,
+    "lng": -75.08389,
+    "id": "110070072352"
+  },
+  {
+    "name": "NORTHEAST METAL TRADERS INC",
+    "lat": 40.02488,
+    "lng": -75.02797,
+    "id": "110070560880"
+  },
+  {
+    "name": "PENNCAT MARSHALLS NE DISTRIBUTION CENTER",
+    "lat": 40.09156,
+    "lng": -75.01143,
+    "id": "110071084227"
+  },
+  {
+    "name": "CHESTNUT HILL COLLEGE",
+    "lat": 40.08447,
+    "lng": -75.2281,
+    "id": "110071499140"
+  },
+  {
+    "name": "PRIDE CLEANING & LAUNDRY VILLAGE",
+    "lat": 40.080623,
+    "lng": -75.17247,
+    "id": "110071499248"
+  },
+  {
+    "name": "NAVSSES",
+    "lat": 39.893054,
+    "lng": -75.178636,
+    "id": "110071722481"
+  },
+  {
+    "name": "COYNE TEXTILE SERVICES",
+    "lat": 39.966263,
+    "lng": -75.217096,
+    "id": "110071722843"
+  },
+  {
+    "name": "PHILADELPHIAS FINEST DRY CLEANERS",
+    "lat": 39.94816,
+    "lng": -75.22156,
+    "id": "110071723058"
+  },
+  {
+    "name": "PHILADELPHIA THERMAL DEVELOPMENT CORP",
+    "lat": 39.941095,
+    "lng": -75.189983,
+    "id": "110071723327"
+  },
+  {
+    "name": "SEPTA - OVERBROOK MAINTENANCE FACILITY",
+    "lat": 39.98079,
+    "lng": -75.229,
+    "id": "110071723685"
+  },
+  {
+    "name": "KIMPTON HOTEL PALOMAR",
+    "lat": 39.950835,
+    "lng": -75.168895,
+    "id": "110071813158"
+  },
+  {
+    "name": "CANPACK US LLC/OLYPHANT",
+    "lat": 39.95326,
+    "lng": -75.17055,
+    "id": "110071949204"
+  },
+  {
+    "name": "LIVE CASINO & HOTEL PHILADELPHIA",
+    "lat": 39.91074,
+    "lng": -75.16565,
+    "id": "110071992674"
+  }
+]

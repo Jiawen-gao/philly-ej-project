@@ -1,8 +1,10 @@
 <script>
   import { onMount, onDestroy } from 'svelte';
-  import { base } from '$app/paths'; // <--- 新增这一行
+  import { base } from '$app/paths';
+  // 这行代码会把 json 文件里的所有数据加载到 backgroundFacilities 变量中
+  import backgroundFacilities from '../data/background_facilities.json';
 
-  // --- 1. 内置数据 (保持不变) ---
+  // --- 1. 内置数据: Top 30 Lists (保持不变) ---
   const complianceData = [
     { rank: 1, lat: 39.9425, lng: -75.1886, id: "110000744990", score: 0.99 },
     { rank: 2, lat: 39.9147, lng: -75.2005, id: "110000336994", score: 0.99 },
@@ -28,12 +30,12 @@
     { rank: 22, lat: 40.03158, lng: -75.02231, id: "110000767137", score: 0.53 },
     { rank: 23, lat: 40.02107, lng: -75.06822, id: "110000337038", score: 0.51 },
     { rank: 24, lat: 39.943069, lng: -75.190723, id: "110000337029", score: 0.48 },
-    { rank: 25, lat: 40.031275, lng: -75.021765, id: "110041235865", score: 0.469 },
-    { rank: 26, lat: 39.95276, lng: -75.14993, id: "110023737134", score: 0.455 },
-    { rank: 27, lat: 39.9671, lng: -75.1269, id: "110000336716", score: 0.448 },
-    { rank: 28, lat: 40.03795, lng: -75.1119, id: "110000336636", score: 0.435 },
-    { rank: 29, lat: 39.98361, lng: -75.088364, id: "110000878756", score: 0.420 },
-    { rank: 30, lat: 39.95246, lng: -75.20984, id: "110001214347", score: 0.418 }
+    { rank: 25, lat: 40.031275, lng: -75.021765, id: "110041235865", score: 0.47 },
+    { rank: 26, lat: 39.95276, lng: -75.14993, id: "110023737134", score: 0.45 },
+    { rank: 27, lat: 39.9671, lng: -75.1269, id: "110000336716", score: 0.44 },
+    { rank: 28, lat: 40.03795, lng: -75.1119, id: "110000336636", score: 0.43 },
+    { rank: 29, lat: 39.98361, lng: -75.088364, id: "110000878756", score: 0.42 },
+    { rank: 30, lat: 39.95246, lng: -75.20984, id: "110001214347", score: 0.41 }
   ];
 
   const harmData = [
@@ -69,6 +71,7 @@
     { rank: 30, lat: 40.01353, lng: -75.03369, id: "110000336814", score: 2307185 }
   ];
 
+
   const metrics = [
     { value: 'percent_black_nh', label: 'Black (Non-Hispanic)', desc: 'Concentrated in North & West Philadelphia' },
     { value: 'percent_white_nh', label: 'White (Non-Hispanic)', desc: 'Concentrated in Center City & Northeast' },
@@ -79,19 +82,21 @@
 
   let selectedMetric = 'percent_black_nh';
   
-  // --- 控制状态 ---
+  // 控制状态
   let showModelA = false;
   let showModelB = false;
-  let rankFilterA = 'all'; // 'all', '1-10', '11-20', '21-30'
+  let showBackground = true; // 默认显示所有工厂背景
+  let rankFilterA = 'all';
   let rankFilterB = 'all'; 
 
   let map;
   let L;
   let geoJsonLayer;
   let facilityLayerGroup;
+  let allFacilitiesLayerGroup; // 专门放灰色点的层
   let mapContainer;
 
-  // --- 2. 颜色逻辑 ---
+  // --- 颜色逻辑 ---
   function getColor(d) {
     return d > 80 ? '#4a1486' : // Deep Purple
            d > 60 ? '#6a51a3' :
@@ -118,14 +123,55 @@
       else return `hsl(0, 85%, ${lightness}%)`;
   }
 
-  // --- 3. 新增：重置视角函数 ---
   function resetView() {
       if (map) {
           map.setView([40.0, -75.1652], 11);
       }
   }
 
-  // --- 4. 更新工厂点位 ---
+  // --- 绘制背景工厂 (灰色点) - 动态调整逻辑 ---
+  function updateBackgroundFacilities() {
+      if (!map || !L || !allFacilitiesLayerGroup) return;
+      
+      allFacilitiesLayerGroup.clearLayers();
+      
+      if (!showBackground) return;
+
+      // 检查是否有任何模型处于激活状态
+      const isAnyModelActive = showModelA || showModelB;
+
+      backgroundFacilities.forEach(f => {
+          // 如果有模型激活，背景点变小、变淡；否则保持正常大小
+          const markerStyle = isAnyModelActive ? {
+              radius: 3,        // 变小
+              opacity: 0.4,     // 变淡
+              fillOpacity: 0.3
+          } : {
+              radius: 4,        // 正常大小
+              opacity: 0.8,
+              fillOpacity: 0.6
+          };
+
+          const marker = L.circleMarker([f.lat, f.lng], {
+              ...markerStyle,
+              fillColor: "#6b7280", // Tailwind gray-500
+              color: "#fff",
+              weight: 1,
+              zIndexOffset: 0 // 放在最底层
+          });
+          
+          marker.bindPopup(`
+              <div style="font-size:12px;">
+                  <strong>${f.name}</strong><br/>
+                  ID: ${f.id}
+              </div>
+          `);
+          
+          allFacilitiesLayerGroup.addLayer(marker);
+      });
+  }
+
+  // --- 绘制 Model A/B 工厂 - 点位稍大 ---
   function updateFacilities() {
     if (!map || !L || !facilityLayerGroup) return;
     
@@ -133,7 +179,6 @@
 
     const addPoints = (data, type, rankFilter) => {
         let filteredData = data;
-        
         if (rankFilter === '1-10') filteredData = data.filter(d => d.rank <= 10);
         else if (rankFilter === '11-20') filteredData = data.filter(d => d.rank >= 11 && d.rank <= 20);
         else if (rankFilter === '21-30') filteredData = data.filter(d => d.rank >= 21 && d.rank <= 30);
@@ -150,13 +195,15 @@
             const icon = L.divIcon({
               className: 'custom-div-icon',
               html: iconHtml,
-              iconSize: [20, 20],
-              iconAnchor: [6, 6] 
+              // 稍微调大 Model 点位容器，增强对比
+              iconSize: [24, 24],
+              iconAnchor: [8, 8] 
             });
 
             const marker = L.marker([d.lat, d.lng], { 
                 icon: icon, 
-                zIndexOffset: (10000 - d.rank) + (type === 'harm' ? 50 : 0)
+                // Rank越小(重要)层级越高，且均高于背景层(灰色点)
+                zIndexOffset: 1000 + (10000 - d.rank) + (type === 'harm' ? 50 : 0)
             });
 
             const scoreDisplay = Math.round(d.score).toLocaleString();
@@ -179,11 +226,17 @@
     if (showModelB) addPoints(harmData, 'harm', rankFilterB);
   }
 
-  // --- 5. 响应式监听 ---
+  // --- 响应式监听 ---
   $: if (geoJsonLayer && selectedMetric) geoJsonLayer.setStyle(style);
   
+  // 监听 Model A/B 变化 -> 更新模型点位
   $: if (map && facilityLayerGroup && (showModelA || !showModelA || showModelB || !showModelB || rankFilterA || rankFilterB)) {
       updateFacilities();
+  }
+  
+  // 监听 Background / Model 变化 -> 更新背景点位 (因为大小受 Model 状态影响)
+  $: if (map && allFacilitiesLayerGroup && (showBackground || !showBackground || showModelA || !showModelA || showModelB || !showModelB)) {
+      updateBackgroundFacilities();
   }
 
   onMount(async () => {
@@ -199,7 +252,9 @@
           attribution: 'CARTO', subdomains: 'abcd', maxZoom: 19
         }).addTo(map);
 
-        facilityLayerGroup = L.layerGroup().addTo(map);
+        // 初始化图层组
+        allFacilitiesLayerGroup = L.layerGroup().addTo(map); // 底层
+        facilityLayerGroup = L.layerGroup().addTo(map); // 顶层
 
         const res = await fetch(`${base}/Vital_Population_CT.geojson`);
         if (res.ok) {
@@ -212,6 +267,7 @@
                     layer.on('mouseover', e => { 
                         e.target.setStyle({ weight: 2, color: '#333' }); 
                         e.target.bringToFront(); 
+                        if(allFacilitiesLayerGroup) allFacilitiesLayerGroup.bringToFront();
                         if(facilityLayerGroup) facilityLayerGroup.bringToFront(); 
                     });
                     layer.on('mouseout', e => geoJsonLayer.resetStyle(e.target));
@@ -220,6 +276,8 @@
             map.fitBounds(geoJsonLayer.getBounds());
         }
         
+        // 初始渲染
+        updateBackgroundFacilities();
         addLegend();
       } catch (e) { console.error("Map init error:", e); }
     }
@@ -248,11 +306,8 @@
 </svelte:head>
 
 <div class="dashboard">
-    <!-- 左侧地图：改为 wrapper 结构以容纳 Reset 按钮 -->
     <div class="map-panel">
         <div class="leaflet-map" bind:this={mapContainer}></div>
-        
-        <!-- Reset 按钮：绝对定位在左上角 (Zoom 控件下方) -->
         <button class="reset-btn" on:click={resetView} title="Reset View">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                 <circle cx="12" cy="12" r="10"></circle>
@@ -263,14 +318,12 @@
         </button>
     </div>
 
-    <!-- 右侧控制栏 -->
     <div class="sidebar">
         <div class="sidebar-header">
-            <h3>Philly EJ Dashboard</h3>
+            <h3>Philly Air Justice Dashboard</h3>
             <p>Compare algorithmic enforcement strategies.</p>
         </div>
 
-        <!-- 1. 人口 (背景) -->
         <div class="control-group">
             <div class="group-label">1. Demographic Layer (Purple)</div>
             <div class="radio-list">
@@ -286,11 +339,17 @@
             </div>
         </div>
 
-        <!-- 2. 模型与过滤 (点位) -->
         <div class="control-group">
             <div class="group-label">2. Inspection Models & Rank</div>
-            
-            <!-- Model A Card -->
+
+             <!-- 将背景点开关移到这里 -->
+            <div class="bg-toggle-container">
+                <label class="toggle-row">
+                    <input type="checkbox" bind:checked={showBackground}>
+                    <span class="toggle-text">Show All Regulated Facilities (Grey Dots)</span>
+                </label>
+            </div>
+
             <div class="model-card-container">
                 <button class="model-btn compliance" class:active={showModelA} on:click={() => showModelA = !showModelA}>
                     <div class="btn-icon blue">A</div>
@@ -308,7 +367,6 @@
                 </div>
             </div>
 
-            <!-- Model B Card -->
             <div class="model-card-container">
                 <button class="model-btn harm" class:active={showModelB} on:click={() => showModelB = !showModelB}>
                     <div class="btn-icon red">B</div>
@@ -326,36 +384,20 @@
                 </div>
             </div>
 
+           
         </div>
     </div>
 </div>
 
 <style>
     .dashboard { display: flex; width: 100%; height: 750px; background: white; border-radius: 12px; overflow: hidden; box-shadow: 0 4px 20px rgba(0,0,0,0.08); border: 1px solid #e5e7eb; }
-    
-    /* 左侧地图容器，设为相对定位 */
     .map-panel { flex: 1; height: 100%; position: relative; background: #f3f4f6; }
     .leaflet-map { width: 100%; height: 100%; z-index: 1; }
 
-    /* Reset 按钮样式 - 仿 Leaflet 原生风格 */
-    .reset-btn {
-        position: absolute;
-        top: 80px; /* 位于缩放控件下方 */
-        left: 10px;
-        z-index: 1000;
-        background: white;
-        border: 2px solid rgba(0,0,0,0.2);
-        border-radius: 4px;
-        width: 30px; height: 30px;
-        padding: 5px;
-        cursor: pointer;
-        display: flex; align-items: center; justify-content: center;
-        background-clip: padding-box;
-    }
+    .reset-btn { position: absolute; top: 80px; left: 10px; z-index: 1000; background: white; border: 2px solid rgba(0,0,0,0.2); border-radius: 4px; width: 30px; height: 30px; padding: 5px; cursor: pointer; display: flex; align-items: center; justify-content: center; }
     .reset-btn:hover { background: #f4f4f4; }
     .reset-btn svg { width: 18px; height: 18px; stroke: #444; }
 
-    /* Sidebar Styles */
     .sidebar { width: 340px; background: #fff; border-left: 1px solid #e5e7eb; display: flex; flex-direction: column; overflow-y: auto; }
     .sidebar-header { padding: 20px; background: #f9fafb; border-bottom: 1px solid #eee; }
     .sidebar-header h3 { margin: 0; font-size: 1.25rem; color: #111; }
@@ -382,7 +424,6 @@
     .btn-title { font-weight: 700; font-size: 0.85rem; color: #111; }
     .btn-desc { font-size: 0.7rem; color: #666; }
     .checkbox-indicator { font-size: 0.7rem; font-weight: 700; color: #ccc; }
-
     .model-btn.compliance.active { background: #eff6ff; border-color: #3b82f6; }
     .model-btn.compliance.active .checkbox-indicator { color: #3b82f6; }
     .model-btn.harm.active { background: #fef2f2; border-color: #ef4444; }
@@ -394,11 +435,17 @@
     .rank-chip:hover { background: #f3f4f6; }
     .rank-chip.active { background: #374151; color: white; border-color: #374151; font-weight: 600; }
 
-    :global(.dot) { width: 12px; height: 12px; border-radius: 50%; border: 2px solid white; box-shadow: 0 2px 4px rgba(0,0,0,0.3); position: absolute; top: 0; left: 0; }
-    :global(.facility-marker-container .label) { position: absolute; left: 12px; top: -6px; font-size: 11px; font-weight: 900; text-shadow: -1px -1px 0 #fff, 1px -1px 0 #fff, -1px 1px 0 #fff, 1px 1px 0 #fff; pointer-events: none; }
+    .bg-toggle-container { margin-top: 15px; padding: 8px; border-top: 1px solid #eee; }
+    .toggle-row { display: flex; align-items: center; gap: 8px; font-size: 0.85rem; color: #555; cursor: pointer; }
+    .toggle-row:hover { color: #111; }
+    .toggle-text { font-weight: 500; }
+
+    /* Model Marker Styles */
+    :global(.dot) { width: 14px; height: 14px; border-radius: 50%; border: 2px solid white; box-shadow: 0 2px 4px rgba(0,0,0,0.3); position: absolute; top: 0; left: 0; }
+    :global(.facility-marker-container .label) { position: absolute; left: 14px; top: -6px; font-size: 11px; font-weight: 900; text-shadow: -1px -1px 0 #fff, 1px -1px 0 #fff, -1px 1px 0 #fff, 1px 1px 0 #fff; pointer-events: none; }
     :global(.popup-header) { font-weight: bold; padding-bottom: 4px; margin-bottom: 4px; border-bottom: 1px solid #eee; }
     :global(.info.legend) { background: white; padding: 8px; border-radius: 6px; box-shadow: 0 2px 10px rgba(0,0,0,0.1); font-size: 12px; }
     :global(.info.legend h6) { margin: 0 0 5px; color: #555; font-size: 11px; text-transform: uppercase; font-weight: bold; }
-    :global(.legend-item) { display: flex; align-items: center; margin-bottom: 3px; }
+    :global(.legend-item) { display: flex; align-items: center; margin-bottom: 2px; }
     :global(.legend-item i) { width: 14px; height: 14px; margin-right: 6px; opacity: 0.8; }
 </style>
