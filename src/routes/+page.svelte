@@ -26,7 +26,7 @@
 </script>
 
 <svelte:head>
-    <title>Philly Air Justice</title>
+    <title>Philly Algorithmic Justice</title>
     <!-- 引入更现代的字体：Space Grotesk (科技/标题) + DM Sans (易读正文) -->
     <link href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,400;500;700&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet">
 </svelte:head>
@@ -57,13 +57,11 @@
         <div class="container hero-container">
             <div class="hero-content">
                 <span class="pill">Civic Data Simulation</span>
-                <h1>Is an Algorithm Deciding Your Neighborhood's Air Quality?</h1>
-                <h2 class="sub-heading">Research Question: Can we re-engineer enforcement algorithms to prioritize public health over paperwork?</h2>
-                <p class="hero-desc">
-                    Philadelphia is using new tech to target pollution inspections. 
-                    We built a simulation to uncover the hidden question: 
-                    <strong>Are we prioritizing compliance paperwork, or your lungs?</strong>
-                </p>
+                <h1>What's the Algorithm Deciding Your Neighborhood's Air Quality?</h1>
+                <h2 class="sub-heading">The U.S. Environmental Protection Agency (EPA) has engaged labs to test the use of machine learning algorithms to reduce Clean Air Act violations. <br>
+                    But is the effective choice always the fair one?
+                <br><strong>We built a simulation using Philadelphia's air data as a case study to reveal the hidden risk beneath the code.</strong></h2>
+
                 <div class="hero-actions">
                     <a href="#map" class="btn-primary">Explore the Map</a>
                     <a href="#concepts" class="btn-secondary">How It Works</a>
@@ -178,8 +176,19 @@
         <div class="container">
             <div class="section-header-group centered">
                 <span class="section-tag">Framework</span>
-                <h2 class="section-heading">Two Ways to Guard the City</h2>
+                <h2 class="section-heading">Two Ways to Inspect the Violations</h2>
                 <p class="section-sub">We simulated two different enforcement strategies. Which one would you choose?</p>
+                <!-- 新增：学术引用注脚 -->
+                <div class="citation-note">
+                    <span class="icon">📄</span>
+                    <span>
+                        Model logic inspired by Benami et al., 
+                        <a href="https://law.stanford.edu/publications/the-distributive-effects-of-risk-prediction-in-environmental-compliance-algorithmic-design-environmental-justice-and-public-policy/" target="_blank" rel="noopener noreferrer">
+                            "The Distributive Effects of Risk Prediction in Environmental Compliance"
+                        </a> 
+                        (ACM FAccT, 2021).
+                    </span>
+                </div>
             </div>
             
             <div class="comparison-grid">
@@ -190,20 +199,20 @@
                     <div class="divider"></div>
                     <p class="goal"><strong>Goal:</strong> Catch as many rule-breakers as possible.</p>
                     <p class="outcome">
-                        It targets small, frequent violators like auto shops. 
-                        While efficient on paper, it often patrols suburbs and misses the heavy smoke.
+                        It predicts which facilities are most likely to incur a violation (HPV/Formal Action) in the future (2019–2023), which prioritizes the <strong>highest inspection hit </strong> rate.
+                        While efficient on paper, it might misses the heaviest smoke.
                     </p>
                 </div>
 
                 <!-- Model B -->
                 <div class="model-box model-b">
-                    <div class="model-badge red">Our Proposal</div>
+                    <div class="model-badge red">Proposal</div>
                     <h3>Model B: "The Harm Reducer"</h3>
                     <div class="divider"></div>
                     <p class="goal"><strong>Goal:</strong> Stop the largest volume of pollution.</p>
                     <p class="outcome">
-                        It ignores small paperwork errors to focus on massive refineries and factories. 
-                        It shifts protection to the neighborhoods that breathe the dirtiest air.
+                        It predicts which facilities pose the largest emission harm (RSEI value) to surrounding communities. 
+                        It seeks the <strong>highest potential </strong>for harm reduction.
                     </p>
                 </div>
             </div>
@@ -260,12 +269,25 @@
             <div class="method-grid">
                 <div class="method-col">
                     <h3>Data Sources</h3>
-                    <p>We combined facility compliance history from the <strong>EPA ECHO Database</strong> with demographic baselines from the <strong>U.S. Census Bureau (ACS 2010-2020)</strong>. We specifically filtered for Clean Air Act (CAA) violations in the Philadelphia area.</p>
+                    <p>When we discuss Algorithmic Government, we must realize: <strong>algorithms are only as good as the data they feed on.</strong>
+                        In our analysis, we found that the 'missing data' in the EPA dataset isn't just a technical glitch; it represents a structural blind spot.</p>
                 </div>
                 <div class="method-col">
-                    <h3>The Algorithm</h3>
-                    <p>We trained <strong>Random Forest</strong> models to simulate inspection prioritization. Model A treats "Significant Non-Compliance" as a binary target (Yes/No). Model B predicts the continuous volume of pollutant discharge to estimate potential harm.</p>
+                    <h3>The Algorithm Ethics</h3>
+                    <p>This is the very essence of the Benami model: a seemingly “rational” efficiency goal can mask or even exacerbate environmental injustice. 
+                        Our research strongly demonstrates that the objective function of a regulatory algorithm is not a purely technical choice—<strong>it is a profound ethical and political choice.</strong></p>
                 </div>
+            </div>
+
+            <!-- 新增：Google Slides 跳转链接 -->
+            <div class="method-footer">
+                <p>
+                    If you want to read more about our Methodology and Critics, please see 
+                    <!-- 请将 href="#" 替换为您的 Google Slide 真实网址 -->
+                    <a href="https://docs.google.com/presentation/d/1ZSVW6opPhsapmlcEjHdJvMnJgoWVug47VKEHBGVf2xU/edit?usp=sharing" target="_blank" rel="noopener noreferrer" class="slide-link">
+                        our detailed slides ↗
+                    </a>
+                </p>
             </div>
         </div>
     </section>
@@ -286,7 +308,7 @@
                 <div class="episode-card">
                     <div class="episode-tag">Episode 1</div>
                     <h3>Title of Episode 1</h3>
-                    <p class="episode-meta">Nov 28, 2025 • 24 mins • Environmental Justice</p>
+                    <p class="episode-meta">Nov 28, 2025 • 3 mins • Environmental Justice</p>
                     
                     <div class="audio-player-wrapper">
                         <!-- 占位音频文件，替换为真实路径 -->
@@ -349,7 +371,7 @@
             <p class="label">Course</p>
             <p class="highlight">MSSP 7100: Democratizing Data?</p>
             <p>Critical Data Studies in Algorithmic Governance</p>
-            <p class="sub">Fall 2025 | Prof. Elizabeth DeYoung</p>
+            <p class="sub">Fall 2025 | Instructor: Dr. Elizabeth DeYoung</p>
         </div>
 
         <!-- 右侧：团队 -->
@@ -746,10 +768,56 @@
     .model-badge.blue { background: #eff6ff; color: var(--blue-model); }
     .model-badge.red { background: #fef2f2; color: var(--red-model); }
     
-    .model-box h3 { font-family: var(--font-head); font-size: 1.8rem; margin: 0 0 1.5rem 0; color: var(--text-primary); }
+    .model-box h3 { font-family: var(--font-head); font-size: 1.6rem; margin: 0 0 1.5rem 0; color: var(--text-primary); }
     .divider { height: 1px; width: 100%; background: #e2e8f0; margin-bottom: 1.5rem; }
     .goal { font-size: 1.1rem; color: var(--text-primary); margin-bottom: 1rem; }
     .outcome { color: var(--text-secondary); font-size: 1rem; }
+
+    /* --- Citation Note Styles --- */
+    .citation-note {
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        margin-top: 1rem;
+        padding: 8px 16px;
+        background-color: rgba(0, 0, 0, 0.03); /* 极淡的灰色背景 */
+        border: 1px solid rgba(0,0,0,0.06);
+        border-radius: 50px;
+        font-size: 0.8rem;
+        color: var(--text-secondary);
+        max-width: 90%;
+        line-height: 1.4;
+    }
+
+    .citation-note .icon {
+        font-size: 1rem;
+        opacity: 0.7;
+    }
+
+    .citation-note a {
+        color: var(--text-primary);
+        font-weight: 600;
+        text-decoration: none;
+        border-bottom: 1px solid #cbd5e1; /* 浅灰色下划线 */
+        transition: all 0.2s ease;
+    }
+
+    .citation-note a:hover {
+        color: var(--accent);
+        border-bottom-color: var(--accent);
+        background-color: rgba(13, 148, 136, 0.05);
+    }
+
+    /* 移动端适配 */
+    @media (max-width: 768px) {
+        .citation-note {
+            flex-direction: column;
+            text-align: center;
+            padding: 12px;
+            border-radius: 12px;
+        }
+        .citation-note .icon { display: none; }
+    }
 
     /* --- Map Section (改回浅色背景，融入整体风格) --- */
     .map-section-light { 
@@ -820,6 +888,37 @@
         border-bottom: 2px solid var(--accent-light);
     }
     .method-col p { font-size: 1.05rem; line-height: 1.7; color: var(--text-secondary); }
+
+    /* --- Methodology Footer --- */
+    .method-footer {
+        text-align: center;
+        margin-top: 1rem;
+        padding-top: 1rem;
+        border-top: 1px solid rgba(0,0,0,0.05); /* 顶部淡淡的分割线 */
+    }
+
+    .method-footer p {
+        font-size: 1.05rem;
+        color: var(--text-secondary);
+    }
+
+    .slide-link {
+        display: inline-block;
+        color: var(--accent);
+        font-weight: 700;
+        text-decoration: none;
+        border-bottom: 2px solid var(--accent-light); /* 下划线装饰 */
+        padding: 0 4px;
+        transition: all 0.2s ease;
+        margin-left: 5px;
+    }
+
+    .slide-link:hover {
+        background-color: var(--accent-light); /* 鼠标悬停变色 */
+        color: var(--accent-hover);
+        border-bottom-color: transparent;
+        border-radius: 4px;
+    }
 
 	/* --- Podcast Section --- */
     .podcast-section {
