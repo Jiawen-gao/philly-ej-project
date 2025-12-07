@@ -31,7 +31,7 @@
     <link href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,400;500;700&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet">
 </svelte:head>
 
-<!-- ================= 顶部导航栏 ================= -->
+<!-- ================= Navigation Bar ================= -->
 <nav class="navbar">
     <div class="nav-container">
         <div class="brand">PHI / AIR / DATA</div>
@@ -307,13 +307,13 @@
                 <!-- 左侧：播放器与单集介绍 -->
                 <div class="episode-card">
                     <div class="episode-tag">Episode 1</div>
-                    <h3>Title of Episode 1</h3>
-                    <p class="episode-meta">Nov 28, 2025 • 3 mins • Environmental Justice</p>
+                    <h3>Green by Algorithm</h3>
+                    <p class="episode-meta">Nov 28, 2025 • 43 mins • Environmental Justice</p>
                     
                     <div class="audio-player-wrapper">
                         <!-- 占位音频文件，替换为真实路径 -->
                         <audio controls class="custom-audio">
-                            <source src="{base}/podcast-sample.mp3" type="audio/mpeg">
+                            <source src="{base}/Green by Algorithm.mp3" type="audio/mpeg">
                             Your browser does not support the audio element.
                         </audio>
                     </div>
@@ -323,9 +323,11 @@
                             <strong>episode abstract</strong>
                         </p>
                         <ul class="topics-list">
-                            <li>✨ Algorithmic Bias 101</li>
-                            <li>🏙️ Redlining vs. Machine Learning</li>
-                            <li>✊ Community-Led Solutions</li>
+                            <li>🔋 The AI Energy Paradox</li>
+                            <li>🌍 Defining "Algorithmic Environmentalism"</li>
+                            <li>📉 The "Invisible" Data Gap</li>
+                            <li>🏭 Environmental Racism & Digital Redlining</li>
+                            <li>🤝 Democratizing Climate Data</li>
                         </ul>
                     </div>
                 </div>
@@ -338,9 +340,11 @@
                     </div>
                     <div class="host-info">
                         <h4>Hosted by Trapetas C. McGill</h4>
-                        <p class="host-role">Role</p>
+                        <p class="host-role">Investment Banking & ESG Finance | Founder, 
+                            <br>ICESI | Data-Driven Capital & Global Markets Strategist</p>
                         <p class="host-bio">
-                            host-bio
+                            I am Trapetas Catherine McGill, a data-driven investment banker and entrepreneur advancing financial equity across the Global South and underrepresented communities in the United States. 
+                            My work sits at the intersection of ESG finance, behavioral economics, and energy investment, focused on closing structural equity gaps in global capital markets.
                         </p>
                     </div>
                 </div>
@@ -424,7 +428,7 @@
     .container { max-width: 1100px; margin: 0 auto; padding: 0 24px; }
     .container-fluid { max-width: 1400px; margin: 0 auto; padding: 0 24px; }
 
-    /* --- Navbar (Increased Interactivity) --- */
+    /* --- Navbar  --- */
     .navbar {
         position: sticky; top: 0; z-index: 1000;
         background: rgba(255,255,255,0.95); backdrop-filter: blur(12px);
